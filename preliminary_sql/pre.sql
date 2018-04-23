@@ -1,5 +1,3 @@
-SET CLIENT_ENCODING TO UTF8;
-BEGIN;
 INSERT INTO map_layers(maplayerid, name, layerdefinitions, isoverlay, icon, activated, addtomap)
    VALUES (public.uuid_generate_v1mc(), 'Search Results', '[
         {
