@@ -26,7 +26,7 @@
                 },
                 "simplify": 0.2,
                 "queries": [
-                    "select gid, streetname, st_transform(geom, 900913) as __geometry__ from streets"
+                    "select gid, rt_fadd, oneway, f_node_cnn, street_gc, multigeom, classcode, lf_toadd, street, zip_code, cnntext, accepted, cnn, nhood, streetname, district, rt_toadd, jurisdicti, t_node_cnn, layer, st_type, lf_fadd, st_transform(geom, 900913) as __geometry__ from streets"
                 ]
             }
         },
