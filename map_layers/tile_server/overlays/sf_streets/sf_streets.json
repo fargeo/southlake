@@ -1,10 +1,10 @@
 {
     "type": "vector",
     "layers": [{
-        "id": "streets",
+        "id": "sf_streets",
         "type": "line",
-        "source": "streets",
-        "source-layer": "streets",
+        "source": "sf_streets",
+        "source-layer": "sf_streets",
         "layout": {
             "visibility": "visible"
         },
