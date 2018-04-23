@@ -1,0 +1,142 @@
+{
+    "graph": [
+        {
+            "author": " ", 
+            "cards": [
+                {
+                    "active": true, 
+                    "cardid": "8fde15d4-4744-11e8-bfd9-0242ac120006", 
+                    "description": "", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Parcels", 
+                    "nodegroup_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "sortorder": null, 
+                    "visible": true
+                }
+            ], 
+            "cards_x_nodes_x_widgets": [], 
+            "deploymentdate": null, 
+            "deploymentfile": null, 
+            "description": "", 
+            "edges": [
+                {
+                    "description": null, 
+                    "domainnode_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "edgeid": "0e5facce-4745-11e8-8127-0242ac120006", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "0e5fa940-4745-11e8-8127-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "edgeid": "c66ba4ea-4744-11e8-b012-0242ac120006", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "c66ba1f2-4744-11e8-b012-0242ac120006"
+                }
+            ], 
+            "forms": [], 
+            "forms_x_cards": [], 
+            "functions_x_graphs": [], 
+            "graphid": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+            "iconclass": "fa fa-square-o", 
+            "is_editable": true, 
+            "isactive": true, 
+            "isresource": false, 
+            "name": "Parcels", 
+            "nodegroups": [
+                {
+                    "cardinality": "1", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "parentnodegroup_id": null
+                }
+            ], 
+            "nodes": [
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Parcel Identifier", 
+                    "nodegroup_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "nodeid": "c66ba1f2-4744-11e8-b012-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "date", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Retire Date", 
+                    "nodegroup_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "nodeid": "0e5fa940-4745-11e8-8127-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": true, 
+                    "name": "Parcel", 
+                    "nodegroup_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "nodeid": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": ""
+                }
+            ], 
+            "ontology_id": null, 
+            "relatable_resource_model_ids": [], 
+            "reports": [], 
+            "resource_2_resource_constraints": [], 
+            "root": {
+                "config": {
+                    "fillColor": "rgba(233,112,111,0.8)"
+                }, 
+                "datatype": "semantic", 
+                "description": "", 
+                "graph_id": "8fdd64c2-4744-11e8-bfd9-0242ac120006", 
+                "is_collector": true, 
+                "isrequired": false, 
+                "issearchable": true, 
+                "istopnode": true, 
+                "name": "Parcel", 
+                "nodegroup_id": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                "nodeid": "8fdd60c6-4744-11e8-bfd9-0242ac120006", 
+                "ontologyclass": null
+            }, 
+            "subtitle": "", 
+            "version": ""
+        }
+    ], 
+    "metadata": {
+        "db": "PostgreSQL 9.6.8 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.2.1) 6.2.1 20160822, 64-bit", 
+        "git hash": "68462d8 2018-04-18 14:15:56 -0700", 
+        "os": "Linux", 
+        "os version": "4.9.87-linuxkit-aufs"
+    }
+}

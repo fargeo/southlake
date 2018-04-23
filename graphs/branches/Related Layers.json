@@ -1,0 +1,189 @@
+{
+    "graph": [
+        {
+            "author": " ", 
+            "cards": [
+                {
+                    "active": true, 
+                    "cardid": "ef54039c-4727-11e8-b7c3-0242ac120006", 
+                    "description": "", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Related Layers", 
+                    "nodegroup_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "sortorder": null, 
+                    "visible": true
+                }
+            ], 
+            "cards_x_nodes_x_widgets": [
+                {
+                    "card_id": "ef54039c-4727-11e8-b7c3-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Layer Type", 
+                        "placeholder": "Select an option"
+                    }, 
+                    "id": "62f9c020-4728-11e8-8144-0242ac120006", 
+                    "label": "Layer Type", 
+                    "node_id": "15fc946e-4728-11e8-9fb7-0242ac120006", 
+                    "sortorder": 0, 
+                    "widget_id": "10000000-0000-0000-0000-000000000015"
+                }, 
+                {
+                    "card_id": "ef54039c-4727-11e8-b7c3-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Related Feature ID", 
+                        "maxLength": null, 
+                        "placeholder": "Enter text", 
+                        "width": "100%"
+                    }, 
+                    "id": "62f96ce2-4728-11e8-8144-0242ac120006", 
+                    "label": "Related Feature ID", 
+                    "node_id": "388fb8bc-4728-11e8-9bc4-0242ac120006", 
+                    "sortorder": 1, 
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                }
+            ], 
+            "deploymentdate": null, 
+            "deploymentfile": null, 
+            "description": "", 
+            "edges": [
+                {
+                    "description": null, 
+                    "domainnode_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "edgeid": "15fc97b6-4728-11e8-9fb7-0242ac120006", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "15fc946e-4728-11e8-9fb7-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "edgeid": "388fbbb4-4728-11e8-9bc4-0242ac120006", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "388fb8bc-4728-11e8-9bc4-0242ac120006"
+                }
+            ], 
+            "forms": [], 
+            "forms_x_cards": [], 
+            "functions_x_graphs": [], 
+            "graphid": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+            "iconclass": "fa fa-align-justify", 
+            "is_editable": true, 
+            "isactive": true, 
+            "isresource": false, 
+            "name": "Related Layers", 
+            "nodegroups": [
+                {
+                    "cardinality": "n", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "parentnodegroup_id": null
+                }
+            ], 
+            "nodes": [
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Related Feature ID", 
+                    "nodegroup_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "nodeid": "388fb8bc-4728-11e8-9bc4-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "options": [
+                            {
+                                "id": "d3cc4b56-f22c-4ad3-b5e1-7a1ef65a6d97", 
+                                "selected": false, 
+                                "text": "Parcel"
+                            }, 
+                            {
+                                "id": "76c54159-d464-4292-9b4b-4e48256f8124", 
+                                "selected": false, 
+                                "text": "Zipcode"
+                            }, 
+                            {
+                                "id": "72119b08-b7b5-4dd0-ab27-fa621ab3b050", 
+                                "selected": false, 
+                                "text": "Building"
+                            }
+                        ]
+                    }, 
+                    "datatype": "domain-value", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Layer Type", 
+                    "nodegroup_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "nodeid": "15fc946e-4728-11e8-9fb7-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": true, 
+                    "name": "Related Layers", 
+                    "nodegroup_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "nodeid": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": ""
+                }
+            ], 
+            "ontology_id": null, 
+            "relatable_resource_model_ids": [], 
+            "reports": [], 
+            "resource_2_resource_constraints": [], 
+            "root": {
+                "config": {
+                    "fillColor": "rgba(233,112,111,0.8)"
+                }, 
+                "datatype": "semantic", 
+                "description": "", 
+                "graph_id": "ef52de04-4727-11e8-b7c3-0242ac120006", 
+                "is_collector": true, 
+                "isrequired": false, 
+                "issearchable": true, 
+                "istopnode": true, 
+                "name": "Related Layers", 
+                "nodegroup_id": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                "nodeid": "ef52da26-4727-11e8-b7c3-0242ac120006", 
+                "ontologyclass": null
+            }, 
+            "subtitle": "", 
+            "version": ""
+        }
+    ], 
+    "metadata": {
+        "db": "PostgreSQL 9.6.8 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.2.1) 6.2.1 20160822, 64-bit", 
+        "git hash": "68462d8 2018-04-18 14:15:56 -0700", 
+        "os": "Linux", 
+        "os version": "4.9.87-linuxkit-aufs"
+    }
+}

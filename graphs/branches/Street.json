@@ -1,0 +1,432 @@
+{
+    "graph": [
+        {
+            "author": " ", 
+            "cards": [
+                {
+                    "active": true, 
+                    "cardid": "c56a5fc4-4743-11e8-a5ca-0242ac120006", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Street Number 1", 
+                    "nodegroup_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "sortorder": 1, 
+                    "visible": true
+                }, 
+                {
+                    "active": true, 
+                    "cardid": "8d76ec4e-4726-11e8-ad18-0242ac120006", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Street Seg ID", 
+                    "nodegroup_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "sortorder": 0, 
+                    "visible": true
+                }, 
+                {
+                    "active": true, 
+                    "cardid": "28579ec6-4726-11e8-9a3e-0242ac120006", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Street Name", 
+                    "nodegroup_id": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "sortorder": 2, 
+                    "visible": true
+                }, 
+                {
+                    "active": true, 
+                    "cardid": "fd7d6c76-4725-11e8-9dec-0242ac120006", 
+                    "description": "", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Street", 
+                    "nodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "sortorder": null, 
+                    "visible": true
+                }
+            ], 
+            "cards_x_nodes_x_widgets": [
+                {
+                    "card_id": "8d76ec4e-4726-11e8-ad18-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Street Segment ID", 
+                        "maxLength": null, 
+                        "placeholder": "Enter text", 
+                        "width": "100%"
+                    }, 
+                    "id": "1e13af94-4727-11e8-810d-0242ac120006", 
+                    "label": "Street Segment ID", 
+                    "node_id": "c5df78da-4726-11e8-bfcb-0242ac120006", 
+                    "sortorder": 0, 
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                }, 
+                {
+                    "card_id": "8d76ec4e-4726-11e8-ad18-0242ac120006", 
+                    "config": {
+                        "dateFormat": "YYYY-MM-DD", 
+                        "defaultValue": "Date of Data Entry", 
+                        "label": "Street Segment Timestamp", 
+                        "maxDate": false, 
+                        "minDate": false, 
+                        "placeholder": "Enter date", 
+                        "viewMode": "days"
+                    }, 
+                    "id": "1e140624-4727-11e8-810d-0242ac120006", 
+                    "label": "Street Segment Timestamp", 
+                    "node_id": "d11f6dc2-4726-11e8-b33e-0242ac120006", 
+                    "sortorder": 1, 
+                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                }, 
+                {
+                    "card_id": "c56a5fc4-4743-11e8-a5ca-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Street Number Suffix", 
+                        "maxLength": null, 
+                        "placeholder": "Enter text", 
+                        "width": "100%"
+                    }, 
+                    "id": "dfcd14ba-4743-11e8-8230-0242ac120006", 
+                    "label": "Street Number Suffix", 
+                    "node_id": "ab8c1098-4743-11e8-9f5c-0242ac120006", 
+                    "sortorder": 0, 
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                }, 
+                {
+                    "card_id": "c56a5fc4-4743-11e8-a5ca-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Street Number", 
+                        "max": "", 
+                        "min": "", 
+                        "placeholder": "Enter number", 
+                        "precision": "", 
+                        "prefix": "", 
+                        "step": "", 
+                        "suffix": "", 
+                        "width": "100%"
+                    }, 
+                    "id": "dfcd5c36-4743-11e8-8230-0242ac120006", 
+                    "label": "Street Number", 
+                    "node_id": "6f923ba8-4743-11e8-a232-0242ac120006", 
+                    "sortorder": 1, 
+                    "widget_id": "10000000-0000-0000-0000-000000000008"
+                }, 
+                {
+                    "card_id": "28579ec6-4726-11e8-9a3e-0242ac120006", 
+                    "config": {
+                        "defaultValue": "", 
+                        "label": "Street Name", 
+                        "maxLength": null, 
+                        "placeholder": "Enter text", 
+                        "width": "100%"
+                    }, 
+                    "id": "1e14c24e-4727-11e8-810d-0242ac120006", 
+                    "label": "Street Name", 
+                    "node_id": "346c702e-4726-11e8-8a96-0242ac120006", 
+                    "sortorder": 0, 
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                }
+            ], 
+            "deploymentdate": null, 
+            "deploymentfile": null, 
+            "description": "", 
+            "edges": [
+                {
+                    "description": null, 
+                    "domainnode_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "edgeid": "6f923e8c-4743-11e8-a232-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "6f923ba8-4743-11e8-a232-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "edgeid": "1fdfebf4-4726-11e8-80d5-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "1fdfe88e-4726-11e8-80d5-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "edgeid": "d11f7092-4726-11e8-b33e-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "d11f6dc2-4726-11e8-b33e-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "edgeid": "62865b42-4743-11e8-968f-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "628655fc-4743-11e8-968f-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "edgeid": "ab8c1368-4743-11e8-9f5c-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "ab8c1098-4743-11e8-9f5c-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "edgeid": "7f619ec4-4726-11e8-b073-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "7f61919a-4726-11e8-b073-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "edgeid": "346c7312-4726-11e8-8a96-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "346c702e-4726-11e8-8a96-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "edgeid": "c5df7d1c-4726-11e8-bfcb-0242ac120006", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "c5df78da-4726-11e8-bfcb-0242ac120006"
+                }
+            ], 
+            "forms": [], 
+            "forms_x_cards": [], 
+            "functions_x_graphs": [], 
+            "graphid": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+            "iconclass": "fa fa-road", 
+            "is_editable": true, 
+            "isactive": true, 
+            "isresource": false, 
+            "name": "Street", 
+            "nodegroups": [
+                {
+                    "cardinality": "1", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "parentnodegroup_id": null
+                }, 
+                {
+                    "cardinality": "n", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "parentnodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006"
+                }, 
+                {
+                    "cardinality": "1", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "parentnodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006"
+                }, 
+                {
+                    "cardinality": "1", 
+                    "legacygroupid": null, 
+                    "nodegroupid": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "parentnodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006"
+                }
+            ], 
+            "nodes": [
+                {
+                    "config": null, 
+                    "datatype": "date", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Segment Timestamp", 
+                    "nodegroup_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "nodeid": "d11f6dc2-4726-11e8-b33e-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Segment ID", 
+                    "nodegroup_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "nodeid": "c5df78da-4726-11e8-bfcb-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "semantic", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Number 1", 
+                    "nodegroup_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "nodeid": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "semantic", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Segment", 
+                    "nodegroup_id": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "nodeid": "7f61919a-4726-11e8-b073-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Name", 
+                    "nodegroup_id": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "nodeid": "346c702e-4726-11e8-8a96-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "number", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Number", 
+                    "nodegroup_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "nodeid": "6f923ba8-4743-11e8-a232-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Number Suffix", 
+                    "nodegroup_id": "628655fc-4743-11e8-968f-0242ac120006", 
+                    "nodeid": "ab8c1098-4743-11e8-9f5c-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "semantic", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Name 1", 
+                    "nodegroup_id": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "nodeid": "1fdfe88e-4726-11e8-80d5-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": true, 
+                    "name": "Street", 
+                    "nodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "nodeid": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": ""
+                }
+            ], 
+            "ontology_id": null, 
+            "relatable_resource_model_ids": [], 
+            "reports": [], 
+            "resource_2_resource_constraints": [], 
+            "root": {
+                "config": {
+                    "fillColor": "rgba(233,112,111,0.8)"
+                }, 
+                "datatype": "semantic", 
+                "description": "", 
+                "graph_id": "fd7ca7b4-4725-11e8-9dec-0242ac120006", 
+                "is_collector": true, 
+                "isrequired": false, 
+                "issearchable": true, 
+                "istopnode": true, 
+                "name": "Street", 
+                "nodegroup_id": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                "nodeid": "fd7c9f9e-4725-11e8-9dec-0242ac120006", 
+                "ontologyclass": null
+            }, 
+            "subtitle": "", 
+            "version": ""
+        }
+    ], 
+    "metadata": {
+        "db": "PostgreSQL 9.6.8 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.2.1) 6.2.1 20160822, 64-bit", 
+        "git hash": "68462d8 2018-04-18 14:15:56 -0700", 
+        "os": "Linux", 
+        "os version": "4.9.87-linuxkit-aufs"
+    }
+}
