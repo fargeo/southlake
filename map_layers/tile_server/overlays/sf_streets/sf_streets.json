@@ -24,7 +24,7 @@
                     "database": "sltreference",
                     "port": "5432"
                 },
-                "simplify": 0.5,
+                "simplify": 0.2,
                 "queries": [
                     "select gid, streetname, st_transform(geom, 900913) as __geometry__ from streets"
                 ]
