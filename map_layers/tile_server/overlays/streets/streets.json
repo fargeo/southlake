@@ -1,0 +1,37 @@
+{
+    "type": "vector",
+    "layers": [{
+        "id": "streets",
+        "type": "line",
+        "source": "streets",
+        "source-layer": "streets",
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-width": 2,
+            "line-color": "rgb(37, 58, 241)"
+        }
+    }],
+    "config": {
+        "provider": {
+            "class": "TileStache.Goodies.VecTiles:Provider",
+            "kwargs": {
+                "dbinfo": {
+                    "host": "localhost",
+                    "user": "postgres",
+                    "password": "postgis",
+                    "database": "sltreference",
+                    "port": "5432"
+                },
+                "simplify": 0.5,
+                "queries": [
+                    "select gid, streetname, st_transform(geom, 900913) as __geometry__ from streets"
+                ]
+            }
+        },
+        "allowed origin": "*",
+        "compress": true,
+        "write cache": true
+    }
+}
