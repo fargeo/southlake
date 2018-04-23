@@ -6,4 +6,10 @@ psql -U postgres -d sltreference -f parcels_3.sql
 psql -U postgres -d sltreference -f parcels_4.sql
 psql -U postgres -d sltreference -f parcels_5.sql
 psql -U postgres -d sltreference -f streets.sql
+psql -U postgres -d sltreference -f buildings_1.sql
+psql -U postgres -d sltreference -f buildings_2.sql
+psql -U postgres -d sltreference -f buildings_3.sql
+psql -U postgres -d sltreference -f buildings_4.sql
+psql -U postgres -d sltreference -f buildings_5.sql
+psql -U postgres -d sltreference -f buildings_6.sql
 psql -U postgres -d sltreference -f update_srids.sql
