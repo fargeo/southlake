@@ -27,7 +27,7 @@
                 },
                 "simplify": 0.2,
                 "queries": [
-                    "select gid, multigeom, lot_num, map_alt, mapblklot, rec_add, map_add, rec_drop, mad_drop, block_num, blklot, st_transform(geom, 900913) as __geometry__ from parcels where mapblklot = blklot and rec_drop is null and mad_drop is null"
+                    "select gid, multigeom, lot_num, map_alt, mapblklot, rec_add, map_add, rec_drop, mad_drop, block_num, blklot, geom as __geometry__ from parcels where mapblklot = blklot and rec_drop is null and mad_drop is null"
                 ]
             }
         },
