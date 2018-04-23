@@ -1,0 +1,7 @@
+{
+    "name": "street-number",
+    "component": "views/components/widgets/street-number",
+    "defaultconfig": {},
+    "helptext": null,
+    "datatype": "street-number"
+}
