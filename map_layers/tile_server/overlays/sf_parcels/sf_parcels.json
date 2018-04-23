@@ -1,0 +1,37 @@
+{
+    "type": "vector",
+    "layers": [{
+        "id": "sf_parcels",
+        "type": "fill",
+        "source": "sf_parcels",
+        "source-layer": "sf_parcels",
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-color": "#088",
+            "fill-opacity": 0.8
+        }
+    }],
+    "config": {
+        "provider": {
+            "class": "TileStache.Goodies.VecTiles:Provider",
+            "kwargs": {
+                "dbinfo": {
+                    "host": "localhost",
+                    "user": "postgres",
+                    "password": "postgis",
+                    "database": "sltreference",
+                    "port": "5432"
+                },
+                "simplify": 0.2,
+                "queries": [
+                    "select gid, multigeom, lot_num, map_alt, mapblklot, rec_add, map_add, rec_drop, mad_drop, block_num, blklot, st_transform(geom, 900913) as __geometry__ from parcels"
+                ]
+            }
+        },
+        "allowed origin": "*",
+        "compress": true,
+        "write cache": true
+    }
+}
