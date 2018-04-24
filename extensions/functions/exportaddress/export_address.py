@@ -1,5 +1,5 @@
 import uuid
-import urllib2
+import urllib2, urllib
 import json
 from pprint import pprint as pp
 from django.core.exceptions import ValidationError
@@ -73,14 +73,19 @@ class ExportAddress(BaseFunction):
                         print "in lookup", tile_node, tile_value
                         address["attributes"][field_lookup[tile_node]] = tile_value
 
-            payload["edits"].append([address])
+            payload["edits"].append({"id":0, "adds":[address]})
+            pp(payload)
             print json.dumps(payload)
-            data = json.dumps(payload)
-            url = 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/SF_Addresses/FeatureServer/0/addFeatures'
-            req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+            data = urllib.urlencode(payload)
+            url = 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/SF_Addresses/FeatureServer/0/applyEdits'
+            print data
+            print 'making request'
+            req = urllib2.Request(url, data)
+            print 'opening request'
             f = urllib2.urlopen(req)
+            print 'reading response'
             response = f.read()
-            print response
+            print 'response', response
             f.close()
         return tile
 
