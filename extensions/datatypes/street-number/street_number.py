@@ -27,7 +27,7 @@ class StreetNumberDatatype(BaseDataType):
         return errors
 
     def append_to_document(self, document, nodevalue, nodeid, tile):
-        document['strings'].append({'string': nodevalue, 'nodegroup_id': tile.nodegroup_id})
+        document['strings'].append({'string': nodevalue['street_name'], 'nodegroup_id': tile.nodegroup_id})
 
     def transform_export_values(self, value, *args, **kwargs):
         if value != None:
@@ -35,9 +35,9 @@ class StreetNumberDatatype(BaseDataType):
 
     def get_search_terms(self, nodevalue, nodeid=None):
         terms = []
-        if nodevalue is not None:
-            if settings.WORDS_PER_SEARCH_TERM == None or (len(nodevalue.split(' ')) < settings.WORDS_PER_SEARCH_TERM):
-                terms.append(nodevalue)
+        if nodevalue['street_name'] is not None:
+            if settings.WORDS_PER_SEARCH_TERM == None or (len(nodevalue['street_name'].split(' ')) < settings.WORDS_PER_SEARCH_TERM):
+                terms.append(nodevalue['street_name'])
         return terms
 
     def append_search_filters(self, value, node, query, request):

@@ -7,5 +7,6 @@
         "depends_on":""
     },
     "helptext": null,
-    "datatype": "street-number"
+    "datatype": "street-number",
+    "widgetid": "32d5043c-c6da-4255-8a90-d6000efb24bb"
 }
