@@ -12,24 +12,9 @@
                     "helptext": null, 
                     "helptitle": null, 
                     "instructions": null, 
-                    "is_editable": true, 
+                    "is_editable": false, 
                     "name": "Sub Address Information", 
                     "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "sortorder": null, 
-                    "visible": true
-                }, 
-                {
-                    "active": true, 
-                    "cardid": "2e8f5b68-4748-11e8-b777-0242ac120006", 
-                    "description": "", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "helpenabled": false, 
-                    "helptext": null, 
-                    "helptitle": null, 
-                    "instructions": null, 
-                    "is_editable": true, 
-                    "name": "Parcels", 
-                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
                     "sortorder": null, 
                     "visible": true
                 }, 
@@ -45,6 +30,21 @@
                     "is_editable": true, 
                     "name": "Address Location", 
                     "nodegroup_id": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "sortorder": null, 
+                    "visible": true
+                }, 
+                {
+                    "active": true, 
+                    "cardid": "2e8f5b68-4748-11e8-b777-0242ac120006", 
+                    "description": "", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "helpenabled": false, 
+                    "helptext": null, 
+                    "helptitle": null, 
+                    "instructions": null, 
+                    "is_editable": true, 
+                    "name": "Parcels", 
+                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
                     "sortorder": null, 
                     "visible": true
                 }
@@ -172,56 +172,11 @@
                 {
                     "description": null, 
                     "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "edgeid": "41452ed2-4756-11e8-8478-0242ac120006", 
+                    "edgeid": "414531f2-4756-11e8-8478-0242ac120006", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
                     "name": null, 
                     "ontologyproperty": null, 
-                    "rangenode_id": "41451b36-4756-11e8-8478-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
-                    "edgeid": "2e8f67fc-4748-11e8-b777-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "2e8f56b8-4748-11e8-b777-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "edgeid": "41453364-4756-11e8-8478-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "41451dc0-4756-11e8-8478-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
-                    "edgeid": "467668f2-4748-11e8-abcc-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "46765254-4748-11e8-abcc-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
-                    "edgeid": "414536fc-4756-11e8-8478-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "41451410-4756-11e8-8478-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "46765254-4748-11e8-abcc-0242ac120006", 
-                    "edgeid": "46766690-4748-11e8-abcc-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "46765d26-4748-11e8-abcc-0242ac120006"
+                    "rangenode_id": "414521bc-4756-11e8-8478-0242ac120006"
                 }, 
                 {
                     "description": null, 
@@ -231,6 +186,24 @@
                     "name": null, 
                     "ontologyproperty": null, 
                     "rangenode_id": "2e8f600e-4748-11e8-b777-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "edgeid": "467664b0-4748-11e8-abcc-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "46765ab0-4748-11e8-abcc-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
+                    "edgeid": "41453364-4756-11e8-8478-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "41451dc0-4756-11e8-8478-0242ac120006"
                 }, 
                 {
                     "description": null, 
@@ -244,20 +217,29 @@
                 {
                     "description": null, 
                     "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "edgeid": "414531f2-4756-11e8-8478-0242ac120006", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "name": null, 
-                    "ontologyproperty": null, 
-                    "rangenode_id": "414521bc-4756-11e8-8478-0242ac120006"
-                }, 
-                {
-                    "description": null, 
-                    "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
                     "edgeid": "414534cc-4756-11e8-8478-0242ac120006", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
                     "name": null, 
                     "ontologyproperty": null, 
                     "rangenode_id": "41451fc8-4756-11e8-8478-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
+                    "edgeid": "467668f2-4748-11e8-abcc-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "46765254-4748-11e8-abcc-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "edgeid": "46766690-4748-11e8-abcc-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "46765d26-4748-11e8-abcc-0242ac120006"
                 }, 
                 {
                     "description": null, 
@@ -270,12 +252,30 @@
                 }, 
                 {
                     "description": null, 
-                    "domainnode_id": "46765254-4748-11e8-abcc-0242ac120006", 
-                    "edgeid": "467664b0-4748-11e8-abcc-0242ac120006", 
+                    "domainnode_id": "41451410-4756-11e8-8478-0242ac120006", 
+                    "edgeid": "41452ed2-4756-11e8-8478-0242ac120006", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
                     "name": null, 
                     "ontologyproperty": null, 
-                    "rangenode_id": "46765ab0-4748-11e8-abcc-0242ac120006"
+                    "rangenode_id": "41451b36-4756-11e8-8478-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
+                    "edgeid": "414536fc-4756-11e8-8478-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "41451410-4756-11e8-8478-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "c5ffce0c-4747-11e8-af74-0242ac120006", 
+                    "edgeid": "2e8f67fc-4748-11e8-b777-0242ac120006", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "2e8f56b8-4748-11e8-b777-0242ac120006"
                 }
             ], 
             "forms": [
@@ -314,34 +314,34 @@
                     "config": {
                         "description": {
                             "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                            "string_template": "<Unit Number>, <Sub Address Information>, <Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
+                            "string_template": "<Unit Number>, <Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
                         }, 
                         "map_popup": {
                             "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                            "string_template": "<Unit Number>, <Sub Address Information>, <Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
+                            "string_template": "<Unit Number>,<Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
                         }, 
                         "name": {
                             "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                            "string_template": "<Unit Number>, <Sub Address Information>, <Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
+                            "string_template": "<Unit Number>, <Base Address>, <Unit Type>, <Sub Address Sync Status>, <Floor>"
                         }, 
                         "triggering_nodegroups": []
                     }, 
                     "function_id": "60000000-0000-0000-0000-000000000001", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "id": "d03ec204-4749-11e8-b925-0242ac120006"
+                    "id": "af72af2b-476e-11e8-b5bf-b8f6b115d7dd"
                 }
             ], 
             "graphid": "c5ffd226-4747-11e8-af74-0242ac120006", 
             "iconclass": "", 
-            "is_editable": true, 
+            "is_editable": false, 
             "isactive": true, 
             "isresource": true, 
             "name": "Sub Address", 
             "nodegroups": [
                 {
-                    "cardinality": "1", 
+                    "cardinality": "n", 
                     "legacygroupid": null, 
-                    "nodegroupid": "2e8f56b8-4748-11e8-b777-0242ac120006", 
+                    "nodegroupid": "46765254-4748-11e8-abcc-0242ac120006", 
                     "parentnodegroup_id": null
                 }, 
                 {
@@ -351,25 +351,50 @@
                     "parentnodegroup_id": null
                 }, 
                 {
-                    "cardinality": "n", 
+                    "cardinality": "1", 
                     "legacygroupid": null, 
-                    "nodegroupid": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "nodegroupid": "2e8f56b8-4748-11e8-b777-0242ac120006", 
                     "parentnodegroup_id": null
                 }
             ], 
             "nodes": [
                 {
+                    "config": null, 
+                    "datatype": "date", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Retire Date", 
+                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
+                    "nodeid": "2e8f5dd4-4748-11e8-b777-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
                     "config": {
                         "options": [
                             {
-                                "id": "cee71efe-2495-4925-a92b-75c67f15cf12", 
+                                "id": "84cb35ef-0aea-49b7-913f-739200a441cc", 
                                 "selected": false, 
-                                "text": "Front Door"
+                                "text": "Apartment"
                             }, 
                             {
-                                "id": "d2eb9ea9-64c8-49ec-8952-3f937bb474f4", 
+                                "id": "71eb72d6-8c43-4f7c-80f5-0d2547d8ac76", 
                                 "selected": false, 
-                                "text": "Access Point"
+                                "text": "Office"
+                            }, 
+                            {
+                                "id": "6950e05f-8e49-40f7-8734-bf55e9ca3416", 
+                                "selected": false, 
+                                "text": "Suite"
+                            }, 
+                            {
+                                "id": "c3e6ed04-0b8b-4636-8618-df5001ec7ec9", 
+                                "selected": false, 
+                                "text": "Room"
                             }
                         ]
                     }, 
@@ -377,29 +402,12 @@
                     "description": "Represents a single node in a graph", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
                     "is_collector": false, 
-                    "isrequired": true, 
-                    "issearchable": true, 
-                    "istopnode": false, 
-                    "name": "Point Type", 
-                    "nodegroup_id": "46765254-4748-11e8-abcc-0242ac120006", 
-                    "nodeid": "46765d26-4748-11e8-abcc-0242ac120006", 
-                    "ontologyclass": null, 
-                    "parentproperty": null
-                }, 
-                {
-                    "config": {
-                        "fillColor": "rgba(233,112,111,0.8)"
-                    }, 
-                    "datatype": "semantic", 
-                    "description": "", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "is_collector": true, 
                     "isrequired": false, 
                     "issearchable": true, 
                     "istopnode": false, 
-                    "name": "Sub Address Location", 
-                    "nodegroup_id": "46765254-4748-11e8-abcc-0242ac120006", 
-                    "nodeid": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "name": "Unit Type", 
+                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
+                    "nodeid": "4145239c-4756-11e8-8478-0242ac120006", 
                     "ontologyclass": null, 
                     "parentproperty": null
                 }, 
@@ -412,9 +420,9 @@
                     "isrequired": true, 
                     "issearchable": true, 
                     "istopnode": false, 
-                    "name": "Unit Number", 
-                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "nodeid": "414521bc-4756-11e8-8478-0242ac120006", 
+                    "name": "Parcel Identifier", 
+                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
+                    "nodeid": "2e8f600e-4748-11e8-b777-0242ac120006", 
                     "ontologyclass": null, 
                     "parentproperty": null
                 }, 
@@ -437,38 +445,6 @@
                 }, 
                 {
                     "config": {
-                        "fillColor": "rgba(233,112,111,0.8)"
-                    }, 
-                    "datatype": "semantic", 
-                    "description": "", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "is_collector": true, 
-                    "isrequired": false, 
-                    "issearchable": true, 
-                    "istopnode": false, 
-                    "name": "Sub Address Information", 
-                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "nodeid": "41451410-4756-11e8-8478-0242ac120006", 
-                    "ontologyclass": null, 
-                    "parentproperty": null
-                }, 
-                {
-                    "config": null, 
-                    "datatype": "string", 
-                    "description": "Represents a single node in a graph", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "is_collector": false, 
-                    "isrequired": true, 
-                    "issearchable": true, 
-                    "istopnode": false, 
-                    "name": "Parcel Identifier", 
-                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
-                    "nodeid": "2e8f600e-4748-11e8-b777-0242ac120006", 
-                    "ontologyclass": null, 
-                    "parentproperty": null
-                }, 
-                {
-                    "config": {
                         "graphid": [
                             "f419146c-4722-11e8-890c-0242ac120006"
                         ]
@@ -483,23 +459,6 @@
                     "name": "Base Address", 
                     "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
                     "nodeid": "41451b36-4756-11e8-8478-0242ac120006", 
-                    "ontologyclass": null, 
-                    "parentproperty": null
-                }, 
-                {
-                    "config": {
-                        "fillColor": "rgba(233,112,111,0.8)"
-                    }, 
-                    "datatype": "semantic", 
-                    "description": "", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "is_collector": true, 
-                    "isrequired": false, 
-                    "issearchable": true, 
-                    "istopnode": false, 
-                    "name": "Parcel", 
-                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
-                    "nodeid": "2e8f56b8-4748-11e8-b777-0242ac120006", 
                     "ontologyclass": null, 
                     "parentproperty": null
                 }, 
@@ -546,44 +505,6 @@
                     "config": {
                         "options": [
                             {
-                                "id": "84cb35ef-0aea-49b7-913f-739200a441cc", 
-                                "selected": false, 
-                                "text": "Apartment"
-                            }, 
-                            {
-                                "id": "71eb72d6-8c43-4f7c-80f5-0d2547d8ac76", 
-                                "selected": false, 
-                                "text": "Office"
-                            }, 
-                            {
-                                "id": "6950e05f-8e49-40f7-8734-bf55e9ca3416", 
-                                "selected": false, 
-                                "text": "Suite"
-                            }, 
-                            {
-                                "id": "c3e6ed04-0b8b-4636-8618-df5001ec7ec9", 
-                                "selected": false, 
-                                "text": "Room"
-                            }
-                        ]
-                    }, 
-                    "datatype": "domain-value", 
-                    "description": "Represents a single node in a graph", 
-                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
-                    "is_collector": false, 
-                    "isrequired": false, 
-                    "issearchable": true, 
-                    "istopnode": false, 
-                    "name": "Unit Type", 
-                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
-                    "nodeid": "4145239c-4756-11e8-8478-0242ac120006", 
-                    "ontologyclass": null, 
-                    "parentproperty": null
-                }, 
-                {
-                    "config": {
-                        "options": [
-                            {
                                 "id": "1d8d9f3e-8df1-44a3-bcce-3b7eb639d2ea", 
                                 "selected": false, 
                                 "text": "Success"
@@ -610,6 +531,38 @@
                     "name": "Sub Address Sync Status", 
                     "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
                     "nodeid": "41451dc0-4756-11e8-8478-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Parcel", 
+                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
+                    "nodeid": "2e8f56b8-4748-11e8-b777-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": null, 
+                    "datatype": "string", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Unit Number", 
+                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
+                    "nodeid": "414521bc-4756-11e8-8478-0242ac120006", 
                     "ontologyclass": null, 
                     "parentproperty": null
                 }, 
@@ -682,17 +635,64 @@
                     "parentproperty": null
                 }, 
                 {
-                    "config": null, 
-                    "datatype": "date", 
+                    "config": {
+                        "options": [
+                            {
+                                "id": "cee71efe-2495-4925-a92b-75c67f15cf12", 
+                                "selected": false, 
+                                "text": "Front Door"
+                            }, 
+                            {
+                                "id": "d2eb9ea9-64c8-49ec-8952-3f937bb474f4", 
+                                "selected": false, 
+                                "text": "Access Point"
+                            }
+                        ]
+                    }, 
+                    "datatype": "domain-value", 
                     "description": "Represents a single node in a graph", 
                     "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
                     "is_collector": false, 
+                    "isrequired": true, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Point Type", 
+                    "nodegroup_id": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "nodeid": "46765d26-4748-11e8-abcc-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "is_collector": true, 
                     "isrequired": false, 
                     "issearchable": true, 
                     "istopnode": false, 
-                    "name": "Retire Date", 
-                    "nodegroup_id": "2e8f56b8-4748-11e8-b777-0242ac120006", 
-                    "nodeid": "2e8f5dd4-4748-11e8-b777-0242ac120006", 
+                    "name": "Sub Address Information", 
+                    "nodegroup_id": "41451410-4756-11e8-8478-0242ac120006", 
+                    "nodeid": "41451410-4756-11e8-8478-0242ac120006", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
+                {
+                    "config": {
+                        "fillColor": "rgba(233,112,111,0.8)"
+                    }, 
+                    "datatype": "semantic", 
+                    "description": "", 
+                    "graph_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+                    "is_collector": true, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Sub Address Location", 
+                    "nodegroup_id": "46765254-4748-11e8-abcc-0242ac120006", 
+                    "nodeid": "46765254-4748-11e8-abcc-0242ac120006", 
                     "ontologyclass": null, 
                     "parentproperty": null
                 }
@@ -818,9 +818,9 @@
         }
     ], 
     "metadata": {
-        "db": "PostgreSQL 9.6.8 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.2.1) 6.2.1 20160822, 64-bit", 
-        "git hash": "68462d8 2018-04-18 14:15:56 -0700", 
-        "os": "Linux", 
-        "os version": "4.9.87-linuxkit-aufs"
+        "db": "PostgreSQL 9.6.6 on x86_64-apple-darwin14.5.0, compiled by Apple LLVM version 7.0.0 (clang-700.1.76), 64-bit", 
+        "git hash": "68462d8a1 2018-04-18 14:15:56 -0700", 
+        "os": "Darwin", 
+        "os version": "17.5.0"
     }
 }
