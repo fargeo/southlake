@@ -1,0 +1,11 @@
+{
+    "name": "street-number",
+    "component": "views/components/widgets/street-number",
+    "defaultconfig": {
+        "street_seg_placeholder":"Street Segment",
+        "street_num_placeholder":"Street Number",
+        "depends_on":""
+    },
+    "helptext": null,
+    "datatype": "street-number"
+}
