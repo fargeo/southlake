@@ -16,7 +16,7 @@ details = {
     'isgeometric': False
     }
 
-class SampleDataType(BaseDataType):
+class StreetNumberDatatype(BaseDataType):
 
     def validate(self, value, source=None):
         errors = []
