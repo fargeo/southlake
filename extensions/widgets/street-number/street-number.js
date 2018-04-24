@@ -17,9 +17,9 @@ define([
         viewModel: function(params) {
             params.configKeys = [
                 'depends_on', 
-                'street_centerline', 
                 'street_seg_placeholder', 
-                'street_num_placeholder'
+                'street_num_placeholder',
+                'street_num_suffix_placeholder'
             ];
             WidgetViewModel.apply(this, [params]);
             var self = this;
@@ -109,19 +109,36 @@ define([
                     var max_add = Math.max(street_seg.attributes.rt_toadd,street_seg.attributes.lf_toadd);
                     var min_add = Math.min(street_seg.attributes.rt_fadd,street_seg.attributes.lf_fadd);
 
+                    //self.street_num(street_seg.attributes.streetname);
+                    self.street_segment_id(street_seg.attributes.cnn);
+                    self.street_name(street_seg.attributes.streetname);
                     return street_name + ' (from: ' + min_add + ', to: ' + max_add + ')';
                 }
             };
 
             if (this.value()) {
-                var street_num = value();
-                var street_seg = value();
-                this.street_num = ko.observable(street_num);
-                this.street_seg = ko.observable(street_seg);
+                var street_obj = this.value();
+                this.street_number = ko.observable(street_obj.street_number);
+                this.street_segment_id = ko.observable(street_obj.street_segment_id);
+                this.street_name = ko.observable(street_obj.street_name);
+                this.street_number_suffix = ko.observable(street_obj.street_number_suffix);
             } else {
-                this.street_num = ko.observable();
-                this.street_seg = ko.observable();
+                this.street_number = ko.observable();
+                this.street_segment_id = ko.observable();
+                this.street_name = ko.observable();
+                this.street_number_suffix = ko.observable();
             };
+
+            this.street_obj = ko.computed(function() {
+                var result = {
+                    street_segment_id: this.street_segment_id() || '',
+                    street_number: this.street_number() || '',
+                    street_name: this.street_name() || '',
+                    street_number_suffix: this.street_number_suffix() || ''
+                }
+                this.value(result);
+                return result;
+            }, this);
 
             this.data = {
               "objectIdFieldName" : "FID", 
