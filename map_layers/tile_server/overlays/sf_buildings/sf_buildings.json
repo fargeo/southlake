@@ -1,18 +1,20 @@
 {
     "type": "vector",
     "layers": [{
-        "layout": {
-            "visibility": "visible"
-        },
+        "layout": {},
         "paint": {
-            "fill-color": "rgba(222, 174, 2, 0.2)",
-            "fill-outline-color": "rgba(222, 174, 2, 1)"
+            "fill-extrusion-color": "hsl(0, 0%, 78%)",
+            "fill-extrusion-height": {
+                "property": "height",
+                "type": "identity"
+            },
+            "fill-extrusion-base": 0,
+            "fill-extrusion-opacity": 0.4
         },
         "source": "sf_buildings",
-        "minzoom": 17,
         "source-layer": "sf_buildings",
-        "type": "fill",
-        "id": "sf_buildings"
+        "type": "fill-extrusion",
+        "id": "sf_buildings_3d"
     }],
     "config": {
         "provider": {
@@ -28,7 +30,7 @@
                 "simplify": 0.2,
                 "clip": false,
                 "queries": [
-                    "select gid, objectid, hgt_maxcm, geom as __geometry__ from public.buildings"
+                    "select gid, objectid::integer, (hgt_maxcm/100)::integer as height, geom as __geometry__ from public.buildings"
                 ]
             }
         },
