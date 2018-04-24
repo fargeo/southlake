@@ -1,0 +1,39 @@
+{
+    "type": "vector",
+    "layers": [{
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "fill-color": "rgba(222, 174, 2, 0.2)",
+            "fill-outline-color": "rgba(222, 174, 2, 1)"
+        },
+        "source": "sf_buildings",
+        "minzoom": 17,
+        "source-layer": "sf_buildings",
+        "type": "fill",
+        "id": "sf_buildings"
+    }],
+    "config": {
+        "provider": {
+            "class": "TileStache.Goodies.VecTiles:Provider",
+            "kwargs": {
+                "dbinfo": {
+                    "host": "localhost",
+                    "user": "postgres",
+                    "password": "postgis",
+                    "database": "sltreference",
+                    "port": "5432"
+                },
+                "simplify": 0.2,
+                "clip": false,
+                "queries": [
+                    "select gid, objectid, hgt_maxcm, geom as __geometry__ from public.buildings"
+                ]
+            }
+        },
+        "allowed origin": "*",
+        "compress": true,
+        "write cache": true
+    }
+}
