@@ -1,18 +1,337 @@
 {
     "type": "vector",
-    "layers": [{
-        "id": "sf_streets",
-        "type": "line",
-        "source": "sf_streets",
-        "source-layer": "sf_streets",
-        "layout": {
-            "visibility": "visible"
+    "layers": [
+        {
+            "id": "sf_roads_class0",
+            "type": "line",
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "0"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            10,
+                            0
+                        ],
+                        [
+                            16,
+                            3
+                        ],
+                        [
+                            22,
+                            18
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(349, 70%, 84%, 0.8)"
+                }
+            }
         },
-        "paint": {
-            "line-width": 2,
-            "line-color": "rgb(37, 58, 241)"
+        {
+            "id": "sf_roads_class5",
+            "type": "line",
+            "metadata": {},
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "5"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            9,
+                            0
+                        ],
+                        [
+                            10,
+                            0.5
+                        ],
+                        [
+                            22,
+                            22
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(349, 78%, 76%, 0.8)"
+                }
+            }
+        },
+        {
+            "id": "sf_roads_class4",
+            "type": "line",
+            "metadata": {},
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "4"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            9,
+                            0
+                        ],
+                        [
+                            10,
+                            0.5
+                        ],
+                        [
+                            12,
+                            3
+                        ],
+                        [
+                            22,
+                            30
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(349, 87%, 64%, 0.8)"
+                }
+            }
+        },
+        {
+            "id": "sf_roads_class3",
+            "type": "line",
+            "metadata": {},
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "3"
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            9,
+                            0
+                        ],
+                        [
+                            12,
+                            2
+                        ],
+                        [
+                            22,
+                            30
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsl(0, 77%, 68%)"
+                }
+            }
+        },
+        {
+            "id": "sf_roads_class2",
+            "type": "line",
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "2"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            9,
+                            0
+                        ],
+                        [
+                            10,
+                            0.5
+                        ],
+                        [
+                            12,
+                            3
+                        ],
+                        [
+                            22,
+                            30
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(35, 60%, 53%, 0.8)"
+                }
+            }
+        },
+        {
+            "id": "sf_roads_class6",
+            "type": "line",
+            "metadata": {},
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "6"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            6,
+                            2
+                        ],
+                        [
+                            9,
+                            3
+                        ],
+                        [
+                            13,
+                            6
+                        ],
+                        [
+                            22,
+                            30
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(35, 89%, 44%, 0.8)"
+                }
+            }
+        },
+        {
+            "id": "sf_roads_class1",
+            "type": "line",
+            "source": "sf_streets",
+            "source-layer": "sf_streets",
+            "filter": [
+                "in",
+                "classcode",
+                "",
+                "1"
+            ],
+            "layout": {},
+            "paint": {
+                "line-width": {
+                    "base": 1.35,
+                    "stops": [
+                        [
+                            6,
+                            2
+                        ],
+                        [
+                            9,
+                            3
+                        ],
+                        [
+                            13,
+                            6
+                        ],
+                        [
+                            22,
+                            30
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "type": "exponential",
+                    "property": "classcode",
+                    "stops": [
+                        [
+                            3,
+                            "hsl(0, 73%, 70%)"
+                        ]
+                    ],
+                    "default": "hsla(35, 89%, 44%, 0.8)"
+                }
+            }
         }
-    }],
+    ],
     "config": {
         "provider": {
             "class": "TileStache.Goodies.VecTiles:Provider",
