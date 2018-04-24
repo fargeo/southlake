@@ -1,5 +1,6 @@
 import uuid
 import urllib2, urllib
+import requests
 import json
 from pprint import pprint as pp
 from django.core.exceptions import ValidationError
@@ -50,9 +51,14 @@ class ExportAddress(BaseFunction):
             }
 
             payload = {
-                "edits":[],
-                "f": "json",
-                "token": "YDi8Lxj3kFFZnr5-23qBu4CUBIqIg6SavpLOyITR9c6N4fvuXs9v8X6zQv50PX5dStWzuNuva6YFofpbU-yQ_b90UelcYr3Zgr91iv5ioiJKPC4uXjCklAw1lywLSUBzkwnMsEHzwm-GBRCcXygKKCMJhbVZ9i-GMBsVBuSZ0NVwhNVgpzSn_LjMjmOJ9XUzC-o6TMZopQ3JmqRhyCHr0Yy-2YGJg0EeEBZbYPlaAMNFN2pfe3Mo1a9GRSAeJHaE"
+                "adds":[],
+                "updates":[],
+                "deletes":'',
+                "attachments":[],
+                "rollbackOnFailure": False,
+                "useGlobalIds": False,
+                "f": "pjson",
+                "token": "tTzVkJ7RPpZmqmlxc7xVBaORWK8vIKQenSkbmK13OnDfIHNKaNCIaH3i6Nz1AUbdnqkEsz8HuA-QqYrndP4yyqgov0NUgabK3lOO19erL-YYPtbIhEzahbSeQ0wPkJx1TH7RVL-gJ9m3iBsV9Affr0NczrLunSdj6rsa1Kg4QI8fTWpdgj0VCy7FaANWggjI6b7kDATtb43W9-hHxmndcjEU9S7lBzCfTty1b4GnAF3dmYhoh4ZBLC-XpsLetKEJ"
             }
 
             field_lookup = {
@@ -71,21 +77,14 @@ class ExportAddress(BaseFunction):
                             tile_value = tile_edits[tile_node]
                             print "using new tile value", tile_value
                         print "in lookup", tile_node, tile_value
-                        address["attributes"][field_lookup[tile_node]] = tile_value
-
-            payload["edits"].append({"id":0, "adds":[address]})
-            pp(payload)
-            print json.dumps(payload)
-            data = urllib.urlencode(payload)
-            url = 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/SF_Addresses/FeatureServer/0/applyEdits'
-            print data
-            print 'making request'
+                        address["attributes"][field_lookup[tile_node]] = str(tile_value)
+            payload["adds"].append(address)
+            data = urllib.urlencode(payload).replace('None', 'null')
+            url = self.config['external_address_url'] + '/applyEdits'
             req = urllib2.Request(url, data)
-            print 'opening request'
             f = urllib2.urlopen(req)
-            print 'reading response'
             response = f.read()
-            print 'response', response
+            print response
             f.close()
         return tile
 
