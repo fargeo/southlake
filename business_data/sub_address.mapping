@@ -1,0 +1,65 @@
+{
+    "resource_model_id": "c5ffd226-4747-11e8-af74-0242ac120006", 
+    "resource_model_name": "Sub Address", 
+    "nodes": [
+        {
+            "arches_nodeid": "0c3170e2-4748-11e8-82c6-0242ac120006", 
+            "arches_node_name": "Base Address", 
+            "file_field_name": "relatedresourceid",
+            "data_type": "resource-instance", 
+            "export": true
+        }, 
+        {
+            "arches_nodeid": "0c316a16-4748-11e8-82c6-0242ac120006", 
+            "arches_node_name": "Floor", 
+            "file_field_name": "",
+            "data_type": "domain-value", 
+            "concept_export_value": "label", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "2e8f600e-4748-11e8-b777-0242ac120006", 
+            "arches_node_name": "Parcel Identifier", 
+            "file_field_name": "eas_baseid",
+            "data_type": "string", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "46765d26-4748-11e8-abcc-0242ac120006", 
+            "arches_node_name": "Point Type", 
+            "file_field_name": "",
+            "data_type": "domain-value", 
+            "concept_export_value": "label", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "2e8f5dd4-4748-11e8-b777-0242ac120006", 
+            "arches_node_name": "Retire Date", 
+            "file_field_name": "",
+            "data_type": "date", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "46765ab0-4748-11e8-abcc-0242ac120006", 
+            "arches_node_name": "Sub Address Point", 
+            "file_field_name": "wkt_point",
+            "data_type": "geojson-feature-collection", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "0c316cb4-4748-11e8-82c6-0242ac120006", 
+            "arches_node_name": "Unit Number", 
+            "file_field_name": "unit_number",
+            "data_type": "string", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "0c316ed0-4748-11e8-82c6-0242ac120006", 
+            "arches_node_name": "Unit Type", 
+            "file_field_name": "",
+            "data_type": "domain-value", 
+            "concept_export_value": "label", 
+            "export": false
+        }
+    ]
+}
