@@ -666,7 +666,7 @@ INSERT INTO map_layers(maplayerid, name, layerdefinitions, isoverlay, icon, acti
             		"line-cap": "round"
             	},
             	"paint": {
-            		"line-color": "rgba(114, 123, 138, 0.8)",
+            		"line-color": "#ccc",
             		"line-width": 2
             	},
             	"source": "sf_parcels",
