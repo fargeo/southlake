@@ -20,7 +20,11 @@ define(['knockout', 'viewmodels/report', 'views/components/widgets/map'], functi
             } else {
                 this.forReportManager = true;
             }
-            // this.configObservable = ko.observable()
+            this.onInit = function (map) {
+                if (map) {
+                    console.log(map);
+                }
+            }
         },
         template: { require: 'text!templates/views/components/reports/base-address.htm' }
     });
