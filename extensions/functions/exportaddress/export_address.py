@@ -77,7 +77,8 @@ class ExportAddress(BaseFunction):
             pp(payload)
             print json.dumps(payload)
             data = urllib.urlencode(payload)
-            url = 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/SF_Addresses/FeatureServer/0/applyEdits'
+            url = self.config['external_address_url']
+            # url = 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/SF_Addresses/FeatureServer/0/applyEdits'
             print data
             print 'making request'
             req = urllib2.Request(url, data)
