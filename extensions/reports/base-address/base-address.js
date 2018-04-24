@@ -41,6 +41,20 @@ define(['knockout', 'viewmodels/report', 'views/components/widgets/map'], functi
                             },
                             "filter": ["==", "cnn", segmentId],
                         });
+                        map.addLayer({
+                            "id": "highlighted-report-parcel",
+                            "type": "fill",
+                            "source": "sf_parcels",
+                            "source-layer": "sf_parcels",
+                            "layout": {
+                                "visibility": "visible"
+                            },
+                            'paint': {
+                                'fill-color': '#f08',
+                                'fill-opacity': 0.15
+                            },
+                            "filter": ["==", "blklot", "3751175"],
+                        });
                     });
                 }
             }
