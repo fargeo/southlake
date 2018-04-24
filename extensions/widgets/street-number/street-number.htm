@@ -5,18 +5,23 @@
 <div class="row widget-wrapper">
     <div class="form-group">
         <label class="control-label widget-input-label" for="" data-bind="text:label"></label>
+        <!-- ko if: disabled -->
+        <div style="padding: 10px"><i class="fa fa-exclamation-triangle" style="color:#ff7a00"></i>You need to save an <span data-bind="text: depends_on"></span> before selcting an address number</div>
+        <!-- /ko -->
         <div class="col-xs-12">
-            <input type="number" data-bind="textInput: x_value, attr: {placeholder: x_placeholder}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
+            <input style="padding-bottom: 5px;"
+                data-bind="
+                value: value,
+                select2Query: {
+                    select2Config: select2Config
+                },
+                attr :{
+                    disabled: disabled
+                }
+            ">
         </div>
         <div class="col-xs-12">
-            <input type="number" data-bind="textInput: y_value, attr: {placeholder: y_placeholder}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
-        </div>
-        <div class="col-xs-12">
-            <input type="text" data-bind="textInput: srid" class="form-control input-lg widget-input" style="margin-bottom: 5px">
-        </div>
-        <div class="col-xs-12">
-            <label class="control-label widget-input-label" for="">Preview</label>
-            <input disabled type="text" data-bind="textInput: preview" class="form-control input-lg widget-input">
+            <input type="number" data-bind="textInput: street_num, attr: {placeholder: street_num_placeholder, disabled: disabled}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
         </div>
     </div>
 </div>
@@ -24,16 +29,23 @@
 
 {% block config_form %}
 <div class="control-label">
-    {% trans "X Coordinate Placeholder" %}
+    {% trans "Only allow input to this when this node is popluated" %}
 </div>
 <div class="col-xs-12 crud-widget-container">
-    <input type="" placeholder="{% trans "Placeholder" %}" id="" class="form-control input-md widget-input" data-bind="textInput: x_placeholder">
+    <input type="" placeholder="{% trans "Node Name" %}" id="" class="form-control input-md widget-input" data-bind="textInput: depends_on">
+</div>
+
+<div class="control-label">
+    {% trans "Placeholder for Street Segment Dropdown" %}
+</div>
+<div class="col-xs-12 crud-widget-container">
+    <input type="" placeholder="{% trans "Street Segment" %}" id="" class="form-control input-md widget-input" data-bind="textInput: street_seg_placeholder">
 </div>
 <div class="control-label">
-    {% trans "Y Coordinate Placeholder" %}
+    {% trans "Placeholder for Street Number" %}
 </div>
 <div class="col-xs-12 crud-widget-container">
-    <input type="" placeholder="{% trans "Placeholder" %}" id="" class="form-control input-md widget-input" data-bind="textInput: y_placeholder">
+    <input type="" placeholder="{% trans "Street Number" %}" id="" class="form-control input-md widget-input" data-bind="textInput: street_num_placeholder">
 </div>
 {% endblock config_form %}
 
