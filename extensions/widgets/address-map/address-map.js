@@ -1,35 +1,20 @@
 define([
-    'arches',
-    'jquery',
     'knockout',
-    'underscore',
-    'views/widgets/map'
-], function (arches, $, ko, _, MapWidgetViewModel) {
+    'views/components/widgets/map'
+], function (ko, MapWidgetViewModel) {
     return ko.components.register('address-map', {
         viewModel: function(params) {
             var self = this;
+            params.onInit = function (map) {
+                if (map) {
+                    var segmentId = 657000;
+                    self.map.on('load', function (map) {
+                        console.log(map);
+                    });
+                }
+            }
             MapWidgetViewModel.apply(this, [params]);
-            var segmentId = 657000;
-            this.map.on('load', function () {
-                console.log(self.map);
-                self.map.addLayer({
-                    "id": "highlighted-report-street",
-                    "type": "line",
-                    "source": "sf_streets",
-                    "source-layer": "sf_streets",
-                    "layout": {
-                        "line-join": "round",
-                        "line-cap": "round"
-                    },
-                    "paint": {
-                        "line-color": "#0029ff",
-                        "line-width": 8
-                    },
-                    "filter": ["==", "cnn", segmentId],
-                });
-            });
-        }
         },
-        require: 'text!widget-templates/map'
+        template: { require: 'text!widget-templates/map' }
     });
 });
