@@ -3,16 +3,16 @@
     "resource_model_name": "Sub Address", 
     "nodes": [
         {
-            "arches_nodeid": "0c3170e2-4748-11e8-82c6-0242ac120006", 
+            "arches_nodeid": "41451b36-4756-11e8-8478-0242ac120006", 
             "arches_node_name": "Base Address", 
             "file_field_name": "relatedresourceid",
             "data_type": "resource-instance", 
-            "export": true
+            "export": false
         }, 
         {
-            "arches_nodeid": "0c316a16-4748-11e8-82c6-0242ac120006", 
+            "arches_nodeid": "41451fc8-4756-11e8-8478-0242ac120006", 
             "arches_node_name": "Floor", 
-            "file_field_name": "",
+            "file_field_name": "floor",
             "data_type": "domain-value", 
             "concept_export_value": "label", 
             "export": false
@@ -20,14 +20,14 @@
         {
             "arches_nodeid": "2e8f600e-4748-11e8-b777-0242ac120006", 
             "arches_node_name": "Parcel Identifier", 
-            "file_field_name": "eas_baseid",
+            "file_field_name": "",
             "data_type": "string", 
             "export": false
         }, 
         {
             "arches_nodeid": "46765d26-4748-11e8-abcc-0242ac120006", 
             "arches_node_name": "Point Type", 
-            "file_field_name": "",
+            "file_field_name": "point_type",
             "data_type": "domain-value", 
             "concept_export_value": "label", 
             "export": false
@@ -47,16 +47,24 @@
             "export": false
         }, 
         {
-            "arches_nodeid": "0c316cb4-4748-11e8-82c6-0242ac120006", 
+            "arches_nodeid": "41451dc0-4756-11e8-8478-0242ac120006", 
+            "arches_node_name": "Sub Address Sync Status", 
+            "file_field_name": "sync_status",
+            "data_type": "domain-value", 
+            "concept_export_value": "label", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "414521bc-4756-11e8-8478-0242ac120006", 
             "arches_node_name": "Unit Number", 
             "file_field_name": "unit_number",
             "data_type": "string", 
             "export": false
         }, 
         {
-            "arches_nodeid": "0c316ed0-4748-11e8-82c6-0242ac120006", 
+            "arches_nodeid": "4145239c-4756-11e8-8478-0242ac120006", 
             "arches_node_name": "Unit Type", 
-            "file_field_name": "",
+            "file_field_name": "unit_type",
             "data_type": "domain-value", 
             "concept_export_value": "label", 
             "export": false
