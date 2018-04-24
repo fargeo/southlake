@@ -302,14 +302,21 @@ INSERT INTO map_layers(maplayerid, name, layerdefinitions, isoverlay, icon, acti
                 }
             },
             {
-            	"paint": {
-            		"fill-color": "#d6d6d6"
-            	},
-            	"type": "fill",
-            	"id": "building",
-            	"source": "sf_buildings",
-            	"minzoom": 16,
-            	"source-layer": "sf_buildings"
+                "layout": {},
+                "paint": {
+                    "fill-extrusion-color": "hsl(0, 0%, 78%)",
+                    "fill-extrusion-height": {
+                        "property": "height",
+                        "type": "identity"
+                    },
+                    "fill-extrusion-base": 0,
+                    "fill-extrusion-opacity": 0.4
+                },
+                "source": "sf_buildings",
+                "source-layer": "sf_buildings",
+                "type": "fill-extrusion",
+                "id": "sf_buildings_3d",
+                "minzoom": 16
             },
             {
                 "id": "tunnel_minor",
