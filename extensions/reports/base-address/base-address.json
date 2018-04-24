@@ -1,0 +1,37 @@
+{
+  "name": "Base address report template",
+  "component": "views/components/reports/base-address",
+  "defaultconfig": {
+    "zoom": 10,
+    "pitch": 0,
+    "basemap": "streets",
+    "bearing": 0,
+    "centerX": -122.3979693,
+    "centerY": 37.79,
+    "maxZoom": 20,
+    "minZoom": 0,
+    "featureColor": "#FF0000",
+    "geometryTypes": [{
+      "id": "Point",
+      "text": "Point"
+    }, {
+      "id": "Line",
+      "text": "Line"
+    }, {
+      "id": "Polygon",
+      "text": "Polygon"
+    }],
+    "overlayConfigs": [],
+    "overlayOpacity": 0,
+    "geocodeProvider": "10000000-0000-0000-0000-010000000000",
+    "geocoderVisible": true,
+    "featureLineWidth": 1,
+    "featurePointSize": 3,
+    "mapControlsHidden": false,
+    "geocodePlaceholder": "Search",
+    "featureEditingDisabled": true
+  },
+  "description": "Base address report",
+  "componentname": "base-address-report",
+  "templateid": "b3056c21-33c4-4055-b064-ea9296c1c13a"
+}
