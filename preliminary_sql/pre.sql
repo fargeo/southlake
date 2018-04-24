@@ -74,53 +74,114 @@ INSERT INTO map_layers(maplayerid, name, layerdefinitions, isoverlay, icon, acti
 INSERT INTO map_layers(maplayerid, name, layerdefinitions, isoverlay, icon, activated, addtomap)
    VALUES (public.uuid_generate_v1mc(), 'Map Markers', '[
        {
-           "id": "search-results-points-markers",
-           "type": "symbol",
-           "source": "search-results-points",
-           "filter": [
-               "all", [
-                   "==",
-                   "$type",
-                   "Point"
-               ],
-               [
-                   "!=",
-                   "highlight",
-                   true
-               ]
-           ],
-           "layout": {
-               "icon-image": "marker-15",
-               "icon-size": 1,
-               "icon-offset": [0, -6],
-               "icon-allow-overlap": true
-           },
-           "paint": {}
-       },
-       {
-           "id": "search-results-points-markers-highlighted",
-           "type": "symbol",
-           "source": "search-results-points",
-           "filter": [
-               "all", [
-                   "==",
-                   "$type",
-                   "Point"
-               ],
-               [
-                   "==",
-                   "highlight",
-                   true
-               ]
-           ],
-           "layout": {
-               "icon-image": "marker-15",
-               "icon-size": 1.3,
-               "icon-offset": [0, -6],
-               "icon-allow-overlap": true
-           },
-           "paint": {}
-       }
+        "layout": {
+          "icon-image": "marker-15",
+          "icon-allow-overlap": true,
+          "icon-offset": [
+            0,
+            -6
+          ],
+          "icon-size": 1
+        },
+        "source": "search-results-points",
+        "filter": [
+          "all",
+          [
+            "==",
+            "$type",
+            "Point"
+          ],
+          [
+            "!=",
+            "highlight",
+            true
+          ]
+        ],
+        "paint": {},
+        "type": "symbol",
+        "id": "search-results-points-markers"
+      },
+      {
+        "layout": {
+          "icon-image": "marker-15",
+          "icon-allow-overlap": true,
+          "icon-offset": [
+            0,
+            -6
+          ],
+          "icon-size": 1.3
+        },
+        "source": "search-results-points",
+        "filter": [
+          "all",
+          [
+            "==",
+            "$type",
+            "Point"
+          ],
+          [
+            "==",
+            "highlight",
+            true
+          ]
+        ],
+        "paint": {},
+        "type": "symbol",
+        "id": "search-results-points-markers-highlighted"
+      },
+      {
+        "layout": {
+          "visibility": "visible"
+        },
+        "source": "search-results-points",
+        "filter": [
+          "all",
+          [
+            "==",
+            "$type",
+            "Point"
+          ],
+          [
+            "==",
+            "highlight",
+            true
+          ]
+        ],
+        "paint": {
+          "circle-translate": [
+            0,
+            -25
+          ],
+          "circle-color": "rgba(0,0,0,0)",
+          "circle-radius": 16
+        },
+        "type": "circle",
+        "id": "search-results-points-markers-point-highlighted"
+      },
+      {
+        "layout": {
+          "visibility": "visible"
+        },
+        "source": "search-results-points",
+        "filter": [
+          "all",
+          [
+            "==",
+            "$type",
+            "Point"
+          ]
+        ],
+        "paint": {
+          "circle-translate": [
+            0,
+            -16
+          ],
+          "circle-color": "rgba(0,0,0,0)",
+          "circle-radius": 11
+        },
+        "type": "circle",
+        "id": "search-results-points-markers-point"
+      }
    ]', TRUE, 'ion-location', TRUE, TRUE);
 
 
