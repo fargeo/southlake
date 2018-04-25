@@ -18,13 +18,24 @@ details = {
 
 class StreetNumberDatatype(BaseDataType):
 
-    def validate(self, value, source=None):
+    def validate(self, value, row_number=None, source=None):
         errors = []
-        try:
-            value.upper()
-        except:
-            errors.append({'type': 'ERROR', 'message': 'datatype: {0} value: {1} {2} - {3}. {4}'.format(self.datatype_model.datatype, value, source, 'this is not a string', 'This data was not imported.')})
+        # try:
+        #     value.upper()
+        # except:
+        #     errors.append({'type': 'ERROR', 'message': 'datatype: {0} value: {1} {2} - {3}. {4}'.format(self.datatype_model.datatype, value, source, 'this is not a string', 'This data was not imported.')})
         return errors
+
+
+    def transform_import_values(self, value, nodeid):
+        v = value.split('|')
+        de = {}
+        de["street_segment_id"] = v[0]
+        de["street_number"] = v[1]
+        de["street_name_suffix"] = v[2]
+        de["street_name"] = v[3]
+
+        return de
 
     def append_to_document(self, document, nodevalue, nodeid, tile):
         document['strings'].append({'string': nodevalue['street_name'], 'nodegroup_id': tile.nodegroup_id})
