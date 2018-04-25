@@ -1,6 +1,5 @@
 import uuid
 import urllib2, urllib
-import requests
 import json
 from pprint import pprint as pp
 from django.core.exceptions import ValidationError
