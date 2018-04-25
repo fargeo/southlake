@@ -8,8 +8,10 @@ from arches.app.models import models
 from arches.app.models.tile import Tile
 from arches.app.functions.base import BaseFunction
 from arches.app.datatypes.datatypes import DataTypeFactory
+from django.contrib.gis.geos import GEOSGeometry
 
 details = {
+    'functionid':'2b4906f2-06e2-4287-ad1b-5597f4404c1f',
     'name': 'Export Address',
     'type': 'node',
     'description': 'Just a sample demonstrating node group selection',
@@ -25,8 +27,6 @@ class ExportAddress(BaseFunction):
         if request:
             address = {
                 "geometry": {
-                    "x": -13634625.801170558,
-                    "y": 4552300.195423533,
                     "spatialReference": {
                         "wkid": 102100,
                         "latestWkid": 3857
@@ -69,45 +69,42 @@ class ExportAddress(BaseFunction):
                 "1a08f80e-4746-11e8-b7cc-0242ac120006": "CNN",
             }
 
+            result_node = models.Node.objects.get(pk='1a08f3cc-4746-11e8-b7cc-0242ac120006')
+            external_tiles = Tile.objects.filter(nodegroup=result_node.nodegroup).filter(resourceinstance=tile.resourceinstance_id)
             tiles = Tile.objects.filter(resourceinstance=tile.resourceinstance_id)
             for tile in tiles:
                 for tile_node, tile_value in tile.data.iteritems():
+                    if models.Node.objects.get(pk=tile_node).datatype == 'geojson-feature-collection':
+                        if tile_node in tile_edits:
+                            tile_value = tile_edits[tile_node]
+                        geom = GEOSGeometry(json.dumps(tile_value['features'][0]['geometry']), srid=4326)
+                        geom.transform(3857)
+                        address['geometry']['x'] = geom.x
+                        address['geometry']['y'] = geom.y
                     if tile_node in field_lookup:
                         if tile_node in tile_edits:
                             tile_value = tile_edits[tile_node]
-                            print "using new tile value", tile_value
-                        print "in lookup", tile_node, tile_value
                         address["attributes"][field_lookup[tile_node]] = str(tile_value)
-            payload["adds"].append(address)
+
+            if len(external_tiles) != 0:
+                address["attributes"]["FID"] = int(external_tiles[0].data["1a08f3cc-4746-11e8-b7cc-0242ac120006"])
+                payload["updates"].append(address)
+            else:
+                payload["adds"].append(address)
             data = urllib.urlencode(payload).replace('None', 'null')
             url = self.config['external_address_url'] + '/applyEdits'
             req = urllib2.Request(url, data)
             f = urllib2.urlopen(req)
             response = f.read()
-            print response
+            response = json.loads(response)
+            pp(payload)
+            pp(response)
+            if len(response['addResults']) > 0:
+                if response['addResults'][0]['success'] == True:
+                    result_tile = models.TileModel()
+                    result_tile.resourceinstance = models.ResourceInstance.objects.get(pk=tile.resourceinstance_id)
+                    result_tile.data = {"1a08f3cc-4746-11e8-b7cc-0242ac120006": str(response['addResults'][0]['objectId'])}
+                    result_tile.nodegroup = result_node.nodegroup
+                    result_tile.save()
             f.close()
         return tile
-
-
-
-
-# EAS_BaseID (type: esriFieldTypeInteger, alias: EAS BaseID, SQL Type: sqlTypeInteger, nullable: true, editable: true)
-# EAS_SubID (type: esriFieldTypeInteger, alias: EAS SubID, SQL Type: sqlTypeInteger, nullable: true, editable: true)
-# CNN (type: esriFieldTypeInteger, alias: CNN, SQL Type: sqlTypeInteger, nullable: true, editable: true)
-# Address (type: esriFieldTypeString, alias: Address, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Address_Number (type: esriFieldTypeInteger, alias: Address Number, SQL Type: sqlTypeInteger, nullable: true, editable: true)
-# Address_Number_Suffix (type: esriFieldTypeString, alias: Address Number Suffix, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Street_Name (type: esriFieldTypeString, alias: Street Name, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Street_Type (type: esriFieldTypeString, alias: Street Type, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Unit_Number (type: esriFieldTypeString, alias: Unit Number, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Zipcode (type: esriFieldTypeInteger, alias: Zipcode, SQL Type: sqlTypeInteger, nullable: true, editable: true)
-# Block_Lot (type: esriFieldTypeString, alias: Block Lot, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# Longitude (type: esriFieldTypeDouble, alias: Longitude, SQL Type: sqlTypeFloat, nullable: true, editable: true)
-# Latitude (type: esriFieldTypeDouble, alias: Latitude, SQL Type: sqlTypeFloat, nullable: true, editable: true)
-# Location (type: esriFieldTypeString, alias: Location, SQL Type: sqlTypeNVarchar, length: 256, nullable: true, editable: true)
-# FID (type: esriFieldTypeOID, alias: FID, SQL Type: sqlTypeInteger, length: 0, nullable: false, editable: false)
-# GlobalID (type: esriFieldTypeGlobalID, alias: GlobalID, SQL Type: sqlTypeOther, length: 38, nullable: false, editable: false)
-# CreationDate (type: esriFieldTypeDate, alias: CreationDate, SQL Type: sqlTypeOther, length: 8, nullable: true, editable: false)
-# Creator (type: esriFieldTypeString, alias: Creator, SQL Type: sqlTypeOther, length: 128, nullable: true, editable: false)
-# EditDate (type: esriFieldTypeDate, alias: EditDate, SQL Type: sqlTypeOther, length: 8, nullable: true, editable: false)
-# Editor (type: esriFieldTypeString, alias: Editor, SQL Type: sqlTypeOther, length: 128, nullable: true, editable: false)
