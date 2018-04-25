@@ -28,6 +28,11 @@ define([
             // if it isn't disable widget and alert the user
 
             this.disabled = ko.observable(true);
+            this.dataLoaded = ko.observable(false);
+            this.coordinates = [];
+            this.data = {
+                features: []
+            };
 
             // simpulate call to find out if node is populated
             // window.setTimeout(function(){
@@ -35,72 +40,132 @@ define([
             // },1000)
 
             if (params.form) {
-                //this.depends_on('location');
-                var url = arches.urls.resource_node_data.replace('//', '/' + params.form.resourceid + '/') + this.depends_on();
+                this.disabled.subscribe(function(disabled){
+                    if(!disabled){
+                        $.ajax({
+                            //dataType: "json",
+                            url: 'https://services8.arcgis.com/jXmOK21AXdxcpkCM/ArcGIS/rest/services/San_Francisco_Basemap_Street_Centerlines/FeatureServer/0/query',
+                            data:{
+                                where: '',
+                                objectIds: '',
+                                time: '',
+                                geometry: this.coordinates[0] + ',' + this.coordinates[1],
+                                geometryType: 'esriGeometryPoint',
+                                inSR: '4326',
+                                spatialRel: 'esriSpatialRelIntersects',
+                                resultType: 'standard',
+                                distance: '100',
+                                units: 'esriSRUnit_Meter',
+                                returnGeodetic: false,
+                                outFields: '*',
+                                returnHiddenFields: false,
+                                returnGeometry: true,
+                                multipatchOption: 'xyFootprint',
+                                maxAllowableOffset: '',
+                                geometryPrecision: '',
+                                outSR: '4326',
+                                datumTransformation: '',
+                                applyVCSProjection: false,
+                                returnIdsOnly: false,
+                                returnCountOnly: false,
+                                returnExtentOnly: false,
+                                returnDistinctValues: false,
+                                orderByFields: '',
+                                groupByFieldsForStatistics: '',
+                                outStatistics: '',
+                                having: '',
+                                resultOffset: '',
+                                resultRecordCount: '',
+                                returnZ: false,
+                                returnM: false,
+                                returnExceededLimitFeatures: true,
+                                quantizationParameters: '',
+                                sqlFormat: 'none',
+                                f: 'json',
+                                token: 'tTzVkJ7RPpZmqmlxc7xVBaORWK8vIKQenSkbmK13OnDfIHNKaNCIaH3i6Nz1AUbdnqkEsz8HuA-QqYrndP4yyqgov0NUgabK3lOO19erL-YYPtbIhEzahbSeQ0wPkJx1TH7RVL-gJ9m3iBsV9Affr0NczrLunSdj6rsa1Kg4QI8fTWpdgj0VCy7FaANWggjI6b7kDATtb43W9-hHxmndcjEU9S7lBzCfTty1b4GnAF3dmYhoh4ZBLC-XpsLetKEJ'
+                            },
+                            success: function(data) {
+                                if(data.length > 0) {
+                                    self.data = JSON.parse(data);
+                                    self.dataLoaded(true);
+                                }
+                            }
+                        });
+                    }
+                }, this);
 
+                var url = arches.urls.resource_node_data.replace('//', '/' + params.form.resourceid + '/') + this.depends_on();
                 $.ajax({
                     dataType: "json",
                     url: url,
                     success: function(data) {
                         if(data.length > 0) {
+                            self.coordinates = data[0].features[0].geometry.coordinates;
                             self.disabled(false);
                         }
                     }
                 });
-                
+
             }
 
+            if (ko.unwrap(this.value)) {
+                var street_obj = this.value;
+                this.street_number = street_obj.street_number;
+                this.street_segment_id = street_obj.street_segment_id;
+                this.street_name = street_obj.street_name;
+                this.street_number_suffix = street_obj.street_number_suffix;
+            } else {
+                this.street_number = ko.observable('');
+                this.street_segment_id = ko.observable('');
+                this.street_name = ko.observable('');
+                this.street_number_suffix = ko.observable('');
+                this.value({
+                    street_number: this.street_number,
+                    street_segment_id: this.street_segment_id,
+                    street_name: this.street_name,
+                    street_number_suffix: this.street_number_suffix
+                })
+            };
+
             this.select2Config = {
-                value: this.value,
+                value: this.street_segment_id,
                 clickBubble: true,
                 multiple: this.multiple,
                 placeholder: this.street_seg_placeholder,
                 allowClear: true,
                 query: function (query) {
-                    var data = {results: []}
-                    // call out to service to select street segments here\
-                    data = self.data;
-                    query.callback({results: data.features});
+                    var data = {results: self.data.features};
+                    query.callback(data);
                 },
                 initSelection: function(element, callback) {
-                    var id = $(element).val();
-                    if (id !== "") {
-                        var data = self.data.features;
-                        var selection =  _.find(data, function (street_seg) {
-                            return street_seg.attributes.FID.toString() === id;
-                        });
-                        if (selection) {
-                            callback(selection);
+                    self.dataLoaded.subscribe(function(dataLoaded){
+                        var id = $(element).val();
+                        if (id !== "") {
+                            if(dataLoaded){
+                                var data = self.data.features;
+                                var selection =  _.find(data, function (street_seg) {
+                                    return street_seg.attributes.cnn.toString() === id;
+                                });
+                                if (selection) {
+                                    callback(selection);
+                                }
+                            }
                         }
-                    }
+                    });
                 },
                 escapeMarkup: function (m) { return m; },
                 id: function(street_seg) {
-                    return street_seg.attributes.FID;
+                    return street_seg.attributes.cnn;
                 },
                 formatResult: function(street_seg) {
                     var street_name = street_seg.attributes.streetname;
                     var max_add = Math.max(street_seg.attributes.rt_toadd,street_seg.attributes.lf_toadd);
                     var min_add = Math.min(street_seg.attributes.rt_fadd,street_seg.attributes.lf_fadd);
-                    // var nodeid = params.node.config.nodeid();
-                    // var nodeDisplayValue = _.find(tile.display_values, function(displayValue) {
-                    //     return nodeid === displayValue.nodeid;
-                    // });
-                    // var markup = '<div class="node-value-select-tile">' +
-                    //     '<div class="selected-node-value">' +
-                    //     getDisplayValueMarkup(nodeDisplayValue) +
-                    //     '</div>';
 
                     var markup = '<div class="node-value-select-tile">' +
                         '<div class="selected-node-value">' +
                         street_name + ' (from: ' + min_add + ', to: ' + max_add + ')'
                         '</div>';
-
-                    // tile.display_values.forEach(function(displayValue) {
-                    //     if (nodeid !== displayValue.nodeid) {
-                    //         markup += getDisplayValueMarkup(displayValue);
-                    //     }
-                    // });
                     markup += '</div>';
                     return markup;
                 },
@@ -115,232 +180,6 @@ define([
                     return street_name + ' (from: ' + min_add + ', to: ' + max_add + ')';
                 }
             };
-
-            if (this.value()) {
-                var street_obj = this.value();
-                this.street_number = ko.observable(street_obj.street_number);
-                this.street_segment_id = ko.observable(street_obj.street_segment_id);
-                this.street_name = ko.observable(street_obj.street_name);
-                this.street_number_suffix = ko.observable(street_obj.street_number_suffix);
-            } else {
-                this.street_number = ko.observable();
-                this.street_segment_id = ko.observable();
-                this.street_name = ko.observable();
-                this.street_number_suffix = ko.observable();
-            };
-
-            this.street_obj = ko.computed(function() {
-                var result = {
-                    street_segment_id: this.street_segment_id() || '',
-                    street_number: this.street_number() || '',
-                    street_name: this.street_name() || '',
-                    street_number_suffix: this.street_number_suffix() || ''
-                }
-                this.value(result);
-                return result;
-            }, this);
-
-            this.data = {
-              "objectIdFieldName" : "FID", 
-              "globalIdFieldName" : "", 
-              "geometryProperties" : 
-              {
-                "shapeLengthFieldName" : "Shape__Length", 
-                "units" : "esriDecimalDegrees"
-              }, 
-              "geometryType" : "esriGeometryPolyline", 
-              "spatialReference" : {
-                "wkid" : 4326, 
-                "latestWkid" : 4326
-              }, 
-              "features" : [
-                {
-                  "attributes" : {
-                    "FID" : 12521, 
-                    "rt_fadd" : 1800, 
-                    "oneway" : "T", 
-                    "f_node_cnn" : 26521000, 
-                    "street_gc" : "BUSH", 
-                    "multigeom" : 0, 
-                    "classcode" : "4", 
-                    "lf_toadd" : 1899, 
-                    "street" : "BUSH", 
-                    "zip_code" : "94109", 
-                    "cnntext" : "3448000", 
-                    "accepted" : "Y", 
-                    "cnn" : 3448000, 
-                    "nhood" : "Lower Pacfic Heights", 
-                    "streetname" : "BUSH ST", 
-                    "district" : " ", 
-                    "rt_toadd" : 1898, 
-                    "jurisdicti" : "DPW", 
-                    "t_node_cnn" : 26525000, 
-                    "layer" : "STREETS", 
-                    "st_type" : "ST", 
-                    "lf_fadd" : 1801, 
-                    "Shape__Length" : 0.00167383251492168
-                  }, 
-                  "geometry" : 
-                  {
-                    "paths" : 
-                    [
-                      [
-                        [-122.42686464323, 37.7878624428439], 
-                        [-122.428525011175, 37.7876505617987]
-                      ]
-                    ]
-                  }
-                }, 
-                {
-                  "attributes" : {
-                    "FID" : 5977, 
-                    "rt_fadd" : 2000, 
-                    "oneway" : "F", 
-                    "f_node_cnn" : 26527000, 
-                    "street_gc" : "PINE", 
-                    "multigeom" : 0, 
-                    "classcode" : "4", 
-                    "lf_toadd" : 2099, 
-                    "street" : "PINE", 
-                    "zip_code" : "94115", 
-                    "cnntext" : "10482000", 
-                    "accepted" : "Y", 
-                    "cnn" : 10482000, 
-                    "nhood" : "Lower Pacfic Heights", 
-                    "streetname" : "PINE ST", 
-                    "district" : " ", 
-                    "rt_toadd" : 2098, 
-                    "jurisdicti" : "DPW", 
-                    "t_node_cnn" : 26532000, 
-                    "layer" : "STREETS", 
-                    "st_type" : "ST", 
-                    "lf_fadd" : 2001, 
-                    "Shape__Length" : 0.00165700946719951
-                  }, 
-                  "geometry" : 
-                  {
-                    "paths" : 
-                    [
-                      [
-                        [-122.428712111026, 37.7885770679644], 
-                        [-122.430355918053, 37.7883683125335]
-                      ]
-                    ]
-                  }
-                }, 
-                {
-                  "attributes" : {
-                    "FID" : 12522, 
-                    "rt_fadd" : 1900, 
-                    "oneway" : "T", 
-                    "f_node_cnn" : 26525000, 
-                    "street_gc" : "BUSH", 
-                    "multigeom" : 0, 
-                    "classcode" : "4", 
-                    "lf_toadd" : 1999, 
-                    "street" : "BUSH", 
-                    "zip_code" : "94115", 
-                    "cnntext" : "3449000", 
-                    "accepted" : "Y", 
-                    "cnn" : 3449000, 
-                    "nhood" : "Lower Pacfic Heights", 
-                    "streetname" : "BUSH ST", 
-                    "district" : " ", 
-                    "rt_toadd" : 1998, 
-                    "jurisdicti" : "DPW", 
-                    "t_node_cnn" : 26531000, 
-                    "layer" : "STREETS", 
-                    "st_type" : "ST", 
-                    "lf_fadd" : 1901, 
-                    "Shape__Length" : 0.00165670067025714
-                  }, 
-                  "geometry" : 
-                  {
-                    "paths" : 
-                    [
-                      [
-                        [-122.428525011175, 37.7876505617987], 
-                        [-122.430168382015, 37.7874408253166]
-                      ]
-                    ]
-                  }
-                }, 
-                {
-                  "attributes" : {
-                    "FID" : 9276, 
-                    "rt_fadd" : 1800, 
-                    "oneway" : "B", 
-                    "f_node_cnn" : 26525000, 
-                    "street_gc" : "LAGUNA", 
-                    "multigeom" : 0, 
-                    "classcode" : "5", 
-                    "lf_toadd" : 1899, 
-                    "street" : "LAGUNA", 
-                    "zip_code" : "94115", 
-                    "cnntext" : "7967000", 
-                    "accepted" : "Y", 
-                    "cnn" : 7967000, 
-                    "nhood" : "Lower Pacfic Heights", 
-                    "streetname" : "LAGUNA ST", 
-                    "district" : " ", 
-                    "rt_toadd" : 1898, 
-                    "jurisdicti" : "DPW", 
-                    "t_node_cnn" : 26527000, 
-                    "layer" : "STREETS", 
-                    "st_type" : "ST", 
-                    "lf_fadd" : 1801, 
-                    "Shape__Length" : 0.000945208987094629
-                  }, 
-                  "geometry" : 
-                  {
-                    "paths" : 
-                    [
-                      [
-                        [-122.428525011175, 37.7876505617987], 
-                        [-122.428712111026, 37.7885770679644]
-                      ]
-                    ]
-                  }
-                }, 
-                {
-                  "attributes" : {
-                    "FID" : 9274, 
-                    "rt_fadd" : 1700, 
-                    "oneway" : "B", 
-                    "f_node_cnn" : 26519000, 
-                    "street_gc" : "LAGUNA", 
-                    "multigeom" : 0, 
-                    "classcode" : "5", 
-                    "lf_toadd" : 1799, 
-                    "street" : "LAGUNA", 
-                    "zip_code" : "94115", 
-                    "cnntext" : "7966000", 
-                    "accepted" : "Y", 
-                    "cnn" : 7966000, 
-                    "nhood" : "Lower Pacfic Heights", 
-                    "streetname" : "LAGUNA ST", 
-                    "district" : " ", 
-                    "rt_toadd" : 1798, 
-                    "jurisdicti" : "DPW", 
-                    "t_node_cnn" : 26525000, 
-                    "layer" : "STREETS", 
-                    "st_type" : "ST", 
-                    "lf_fadd" : 1701, 
-                    "Shape__Length" : 0.00095683841360442
-                  }, 
-                  "geometry" : 
-                  {
-                    "paths" : 
-                    [
-                      [
-                        [-122.428335613418, 37.7867126554923], 
-                        [-122.428525011175, 37.7876505617987]
-                      ]
-                    ]
-                  }
-                }
-              ]
-            }
         },
         template: { require: 'text!templates/views/components/widgets/street-number.htm' }
     });
