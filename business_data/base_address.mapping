@@ -43,7 +43,7 @@
         {
             "arches_nodeid": "29862afe-4746-11e8-88b1-0242ac120006", 
             "arches_node_name": "Parcel Identifier", 
-            "file_field_name": "",
+            "file_field_name": "parcel_id",
             "data_type": "string", 
             "export": false
         }, 
