@@ -69,42 +69,58 @@ class ExportAddress(BaseFunction):
                 "1a08f80e-4746-11e8-b7cc-0242ac120006": "CNN",
             }
 
+            geometry_node = '2ad20702-4746-11e8-a9a0-0242ac120006'
+
+
             result_node = models.Node.objects.get(pk='1a08f3cc-4746-11e8-b7cc-0242ac120006')
-            external_tiles = Tile.objects.filter(nodegroup=result_node.nodegroup).filter(resourceinstance=tile.resourceinstance_id)
+            external_reference = Tile.objects.filter(nodegroup=result_node.nodegroup).filter(resourceinstance=tile.resourceinstance_id)
             tiles = Tile.objects.filter(resourceinstance=tile.resourceinstance_id)
+
+            has_geom = False
+
             for tile in tiles:
                 for tile_node, tile_value in tile.data.iteritems():
-                    if models.Node.objects.get(pk=tile_node).datatype == 'geojson-feature-collection':
-                        if tile_node in tile_edits:
-                            tile_value = tile_edits[tile_node]
+                    # if models.Node.objects.get(pk=tile_node).datatype == 'geojson-feature-collection':
+                    if tile_node == geometry_node:
                         geom = GEOSGeometry(json.dumps(tile_value['features'][0]['geometry']), srid=4326)
                         geom.transform(3857)
                         address['geometry']['x'] = geom.x
                         address['geometry']['y'] = geom.y
+                        has_geom = True
                     if tile_node in field_lookup:
-                        if tile_node in tile_edits:
-                            tile_value = tile_edits[tile_node]
                         address["attributes"][field_lookup[tile_node]] = str(tile_value)
 
-            if len(external_tiles) != 0:
-                address["attributes"]["FID"] = int(external_tiles[0].data["1a08f3cc-4746-11e8-b7cc-0242ac120006"])
-                payload["updates"].append(address)
-            else:
-                payload["adds"].append(address)
-            data = urllib.urlencode(payload).replace('None', 'null')
-            url = self.config['external_address_url'] + '/applyEdits'
-            req = urllib2.Request(url, data)
-            f = urllib2.urlopen(req)
-            response = f.read()
-            response = json.loads(response)
-            pp(payload)
-            pp(response)
-            if len(response['addResults']) > 0:
-                if response['addResults'][0]['success'] == True:
-                    result_tile = models.TileModel()
-                    result_tile.resourceinstance = models.ResourceInstance.objects.get(pk=tile.resourceinstance_id)
-                    result_tile.data = {"1a08f3cc-4746-11e8-b7cc-0242ac120006": str(response['addResults'][0]['objectId'])}
-                    result_tile.nodegroup = result_node.nodegroup
-                    result_tile.save()
-            f.close()
+            for edit_node, edit_value in tile_edits.iteritems():
+                if edit_node == geometry_node:
+                    geom = GEOSGeometry(json.dumps(edit_value['features'][0]['geometry']), srid=4326)
+                    geom.transform(3857)
+                    address['geometry']['x'] = geom.x
+                    address['geometry']['y'] = geom.y
+                    has_geom = True
+                if edit_node in field_lookup:
+                    address["attributes"][field_lookup[edit_node]] = str(edit_value)
+
+            if has_geom:
+                if len(external_reference) != 0:
+                    address["attributes"]["FID"] = int(external_reference[0].data["1a08f3cc-4746-11e8-b7cc-0242ac120006"])
+                    payload["updates"].append(address)
+                else:
+                    payload["adds"].append(address)
+                data = urllib.urlencode(payload).replace('None', 'null')
+                url = self.config['external_address_url'] + '/applyEdits'
+                req = urllib2.Request(url, data)
+                f = urllib2.urlopen(req)
+                response = f.read()
+                response = json.loads(response)
+                pp(payload)
+                pp(response)
+                if len(response['addResults']) > 0:
+                    if response['addResults'][0]['success'] == True:
+                        result_tile = models.TileModel()
+                        result_tile.resourceinstance = models.ResourceInstance.objects.get(pk=tile.resourceinstance_id)
+                        result_tile.data = {"1a08f3cc-4746-11e8-b7cc-0242ac120006": str(response['addResults'][0]['objectId'])}
+                        result_tile.nodegroup = result_node.nodegroup
+                        result_tile.save()
+                f.close()
+
         return tile
