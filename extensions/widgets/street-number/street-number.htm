@@ -20,8 +20,18 @@
                 }
             ">
         </div>
+        <div class="col-xs-12" style="padding-bottom: 20px; padding-left: 24px;">
+            <label class="control-label widget-input-label" for="">Street Segment Id: </label>
+            <span data-bind="text: street_segment_id" style="margin-bottom: 5px"></span>
+            <br>
+            <label class="control-label widget-input-label" for="">Street Name: </label>
+            <span data-bind="text: street_name" style="margin-bottom: 5px"></span>
+        </div>
         <div class="col-xs-12">
-            <input type="number" data-bind="textInput: street_num, attr: {placeholder: street_num_placeholder, disabled: disabled}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
+            <input type="number" data-bind="textInput: street_number, attr: {placeholder: street_num_placeholder, disabled: disabled}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
+        </div>
+        <div class="col-xs-12">
+            <input data-bind="textInput: street_number_suffix, attr: {placeholder: street_num_suffix_placeholder, disabled: disabled}" class="form-control input-lg widget-input" style="margin-bottom: 5px">
         </div>
     </div>
 </div>
