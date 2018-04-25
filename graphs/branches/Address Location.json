@@ -23,6 +23,19 @@
                 {
                     "card_id": "dced7dbc-4724-11e8-af83-0242ac120006", 
                     "config": {
+                        "defaultValue": "", 
+                        "label": "Point Type", 
+                        "placeholder": "Select an option"
+                    }, 
+                    "id": "ab9a0158-4725-11e8-83f3-0242ac120006", 
+                    "label": "Point Type", 
+                    "node_id": "1f19e1a8-4725-11e8-9d28-0242ac120006", 
+                    "sortorder": 1, 
+                    "widget_id": "10000000-0000-0000-0000-000000000015"
+                }, 
+                {
+                    "card_id": "dced7dbc-4724-11e8-af83-0242ac120006", 
+                    "config": {
                         "basemap": "streets", 
                         "bearing": 0, 
                         "centerX": -122.433988993, 
@@ -54,19 +67,6 @@
                     "node_id": "0990df1c-4725-11e8-bbe1-0242ac120006", 
                     "sortorder": 0, 
                     "widget_id": "10000000-0000-0000-0000-000000000007"
-                }, 
-                {
-                    "card_id": "dced7dbc-4724-11e8-af83-0242ac120006", 
-                    "config": {
-                        "defaultValue": "", 
-                        "label": "Point Type", 
-                        "placeholder": "Select an option"
-                    }, 
-                    "id": "ab9a0158-4725-11e8-83f3-0242ac120006", 
-                    "label": "Point Type", 
-                    "node_id": "1f19e1a8-4725-11e8-9d28-0242ac120006", 
-                    "sortorder": 1, 
-                    "widget_id": "10000000-0000-0000-0000-000000000015"
                 }
             ], 
             "deploymentdate": null, 
@@ -76,11 +76,11 @@
                 {
                     "description": null, 
                     "domainnode_id": "dcecb102-4724-11e8-af83-0242ac120006", 
-                    "edgeid": "1f19e478-4725-11e8-9d28-0242ac120006", 
+                    "edgeid": "a2a146f8-47f0-11e8-8548-f45c89b6558b", 
                     "graph_id": "dcecb544-4724-11e8-af83-0242ac120006", 
                     "name": null, 
                     "ontologyproperty": null, 
-                    "rangenode_id": "1f19e1a8-4725-11e8-9d28-0242ac120006"
+                    "rangenode_id": "a2a1449e-47f0-11e8-9492-f45c89b6558b"
                 }, 
                 {
                     "description": null, 
@@ -90,6 +90,15 @@
                     "name": null, 
                     "ontologyproperty": null, 
                     "rangenode_id": "0990df1c-4725-11e8-bbe1-0242ac120006"
+                }, 
+                {
+                    "description": null, 
+                    "domainnode_id": "dcecb102-4724-11e8-af83-0242ac120006", 
+                    "edgeid": "1f19e478-4725-11e8-9d28-0242ac120006", 
+                    "graph_id": "dcecb544-4724-11e8-af83-0242ac120006", 
+                    "name": null, 
+                    "ontologyproperty": null, 
+                    "rangenode_id": "1f19e1a8-4725-11e8-9d28-0242ac120006"
                 }
             ], 
             "forms": [], 
@@ -110,6 +119,21 @@
                 }
             ], 
             "nodes": [
+                {
+                    "config": null, 
+                    "datatype": "street-number", 
+                    "description": "Represents a single node in a graph", 
+                    "graph_id": "dcecb544-4724-11e8-af83-0242ac120006", 
+                    "is_collector": false, 
+                    "isrequired": false, 
+                    "issearchable": true, 
+                    "istopnode": false, 
+                    "name": "Street Object", 
+                    "nodegroup_id": "dcecb102-4724-11e8-af83-0242ac120006", 
+                    "nodeid": "a2a1449e-47f0-11e8-9492-f45c89b6558b", 
+                    "ontologyclass": null, 
+                    "parentproperty": null
+                }, 
                 {
                     "config": {
                         "options": [
@@ -220,9 +244,9 @@
         }
     ], 
     "metadata": {
-        "db": "PostgreSQL 9.6.8 on x86_64-pc-linux-musl, compiled by gcc (Alpine 6.2.1) 6.2.1 20160822, 64-bit", 
-        "git hash": "68462d8 2018-04-18 14:15:56 -0700", 
-        "os": "Linux", 
-        "os version": "4.9.87-linuxkit-aufs"
+        "db": "PostgreSQL 9.6.6 on x86_64-apple-darwin14.5.0, compiled by Apple LLVM version 7.0.0 (clang-700.1.76), 64-bit", 
+        "git hash": "ae5531aac 2018-04-24 16:56:13 -0700", 
+        "os": "Darwin", 
+        "os version": "17.5.0"
     }
 }

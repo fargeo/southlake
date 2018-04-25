@@ -10,10 +10,17 @@
             "export": false
         }, 
         {
-            "arches_nodeid": "2ad20702-4746-11e8-a9a0-0242ac120006", 
+            "arches_nodeid": "d4571b99-4828-11e8-b029-b8f6b115d7dd", 
             "arches_node_name": "Address Point", 
             "file_field_name": "wkt_point",
             "data_type": "geojson-feature-collection", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "27f59ecc-4746-11e8-b6b3-0242ac120006", 
+            "arches_node_name": "Address Retire Date", 
+            "file_field_name": "",
+            "data_type": "date", 
             "export": false
         }, 
         {
@@ -48,7 +55,14 @@
             "export": false
         }, 
         {
-            "arches_nodeid": "2ad2093c-4746-11e8-a9a0-0242ac120006", 
+            "arches_nodeid": "298628a6-4746-11e8-88b1-0242ac120006", 
+            "arches_node_name": "Parcel Retire Date", 
+            "file_field_name": "",
+            "data_type": "date", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "d4571cee-4828-11e8-abf7-b8f6b115d7dd", 
             "arches_node_name": "Point Type", 
             "file_field_name": "point_type",
             "data_type": "domain-value", 
@@ -58,22 +72,8 @@
         {
             "arches_nodeid": "2bc2fc2a-4746-11e8-920f-0242ac120006", 
             "arches_node_name": "Related Feature ID", 
-            "file_field_name": "",
-            "data_type": "string", 
-            "export": false
-        }, 
-        {
-            "arches_nodeid": "27f59ecc-4746-11e8-b6b3-0242ac120006", 
-            "arches_node_name": "Retire Date", 
             "file_field_name": "retire_date",
-            "data_type": "date", 
-            "export": false
-        }, 
-        {
-            "arches_nodeid": "298628a6-4746-11e8-88b1-0242ac120006", 
-            "arches_node_name": "Retire Date", 
-            "file_field_name": "",
-            "data_type": "date", 
+            "data_type": "string", 
             "export": false
         }, 
         {
@@ -95,6 +95,13 @@
             "arches_node_name": "Street Number Suffix", 
             "file_field_name": "address_number_suffix",
             "data_type": "string", 
+            "export": false
+        }, 
+        {
+            "arches_nodeid": "d4571a14-4828-11e8-b4ad-b8f6b115d7dd", 
+            "arches_node_name": "Street Object", 
+            "file_field_name": "street_object",
+            "data_type": "street-number", 
             "export": false
         }, 
         {
