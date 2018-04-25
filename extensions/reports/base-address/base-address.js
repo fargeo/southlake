@@ -9,6 +9,7 @@ define(['knockout', 'viewmodels/report', 'views/components/widgets/map'], functi
             this.feature_count = 0
             this.forReportManager = false
             var segmentId;
+            var parcelId;
             if (tiles) {
                 tiles.forEach(function(tile) {
                     _.each(tile.data, function(val, key) {
@@ -18,6 +19,10 @@ define(['knockout', 'viewmodels/report', 'views/components/widgets/map'], functi
                         if (key === '1a08f80e-4746-11e8-b7cc-0242ac120006') {
                             segmentId = parseInt(val);
                         }
+                        if (key === '29862afe-4746-11e8-88b1-0242ac120006') {
+                            parcelId = val;
+                        }
+                        
                     }, this);
                 }, this)
             } else {
@@ -53,7 +58,7 @@ define(['knockout', 'viewmodels/report', 'views/components/widgets/map'], functi
                                 'fill-color': '#f08',
                                 'fill-opacity': 0.15
                             },
-                            "filter": ["==", "blklot", "3751175"],
+                            "filter": ["==", "blklot", parcelId],
                         });
                     });
                 }
