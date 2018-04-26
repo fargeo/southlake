@@ -34,11 +34,6 @@ define([
                 features: []
             };
 
-            // simpulate call to find out if node is populated
-            // window.setTimeout(function(){
-            //     self.disabled(false)
-            // },1000)
-
             if (params.form) {
                 this.disabled.subscribe(function(disabled){
                     if(!disabled){
@@ -94,18 +89,41 @@ define([
                     }
                 }, this);
 
-                var url = arches.urls.resource_node_data.replace('//', '/' + params.form.resourceid + '/') + this.depends_on();
-                $.ajax({
-                    dataType: "json",
-                    url: url,
-                    success: function(data) {
-                        if(data.length > 0) {
-                            self.coordinates = data[0].features[0].geometry.coordinates;
-                            self.disabled(false);
-                        }
+                var getNodeIdFromName = function(node_name){
+                    var node = _.find(params.form.cards()[0].attributes.data.nodes, function(node){
+                        return node.name === node_name;
+                    })
+                    return node.nodeid;
+                }
+                var nodeid = getNodeIdFromName(this.depends_on());
+                if (!!nodeid) {
+                    // address point node is local to the card
+                    var node_data = ko.unwrap(params.form.formTiles()[0].data[nodeid]);
+                    if (!!node_data) {
+                        self.coordinates = ko.unwrap(ko.unwrap(node_data.features)[0].geometry.coordinates);
+                        self.disabled(false);
+                    }else{
+                        params.form.formTiles()[0].data[nodeid].subscribe(function(node_data){
+                            if (!!node_data) {
+                                self.coordinates = node_data.features[0].geometry.coordinates;
+                                self.disabled(false);
+                            }
+                        })
                     }
-                });
-
+                }else{
+                    // address point node is on another card
+                    var url = arches.urls.resource_node_data.replace('//', '/' + params.form.resourceid + '/') + this.depends_on();
+                    $.ajax({
+                        dataType: "json",
+                        url: url,
+                        success: function(data) {
+                            if(data.length > 0) {
+                                self.coordinates = data[0].features[0].geometry.coordinates;
+                                self.disabled(false);
+                            }
+                        }
+                    });
+                }
             }
 
             if (ko.unwrap(this.value)) {
