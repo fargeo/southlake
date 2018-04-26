@@ -4,6 +4,7 @@
     "defaultconfig": {
         "street_seg_placeholder":"Street Segment",
         "street_num_placeholder":"Street Number",
+        "street_num_suffix_placeholder": "Street Number Suffix",
         "depends_on":""
     },
     "helptext": null,

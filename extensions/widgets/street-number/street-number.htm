@@ -56,6 +56,12 @@
 <div class="col-xs-12 crud-widget-container">
     <input type="" placeholder="{% trans "Street Number" %}" id="" class="form-control input-md widget-input" data-bind="textInput: street_num_placeholder">
 </div>
+<div class="control-label">
+    {% trans "Placeholder for Street Number Suffix" %}
+</div>
+<div class="col-xs-12 crud-widget-container">
+    <input type="" placeholder="{% trans "Street Number Suffix" %}" id="" class="form-control input-md widget-input" data-bind="textInput: street_num_suffix_placeholder">
+</div>
 {% endblock config_form %}
 
 {% block report %}
